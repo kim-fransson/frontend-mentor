@@ -23,6 +23,7 @@ export const SummaryList = (props: SummaryListProps) => {
           case "Reaction":
             return (
               <Summary
+                key={summary.category}
                 color="red"
                 title={summary.category}
                 icon={<ReactionIcon />}
@@ -33,6 +34,7 @@ export const SummaryList = (props: SummaryListProps) => {
           case "Memory":
             return (
               <Summary
+                key={summary.category}
                 color="yellow"
                 title={summary.category}
                 icon={<MemoryIcon />}
@@ -43,6 +45,7 @@ export const SummaryList = (props: SummaryListProps) => {
           case "Verbal":
             return (
               <Summary
+                key={summary.category}
                 color="green"
                 title={summary.category}
                 icon={<VerbalIcon />}
@@ -53,6 +56,7 @@ export const SummaryList = (props: SummaryListProps) => {
           case "Visual":
             return (
               <Summary
+                key={summary.category}
                 color="blue"
                 title={summary.category}
                 icon={<VisualIcon />}
