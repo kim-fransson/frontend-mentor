@@ -2,9 +2,7 @@ import classNames from "classnames";
 import { PropsWithChildren, useRef } from "react";
 import { AriaButtonProps, useButton } from "react-aria";
 
-interface ButtonProps extends AriaButtonProps, PropsWithChildren {
-  className?: string;
-}
+interface ButtonProps extends AriaButtonProps, PropsWithChildren {}
 
 export const Button = (props: ButtonProps) => {
   const buttonRef = useRef(null);
@@ -14,8 +12,8 @@ export const Button = (props: ButtonProps) => {
       {...buttonProps}
       ref={buttonRef}
       className={classNames(
-        "text-center outline-none text-lg py-4 px-4 rounded-full bg-blue-950 text-gray-200 font-bold",
-        props.className
+        "text-center tracking-wider outline-none text-lg py-4 px-4 rounded-full text-gray-200 bg-blue-950 font-bold transition-all duration-300 ease-in-out",
+        "hover:bg-indigo-600 hover:text-gray-100 hover:scale-105"
       )}
     >
       {props.children}

@@ -16,12 +16,12 @@ export const ResultsSummary = (props: ResultsSummaryProps) => {
     <div
       className={classNames(
         "w-full flex flex-col items-center justify-center gap-8 bg-white font-hanken-grotesk",
-        "md:flex-row md:shadow-lg md:rounded-3xl md:items-stretch md:max-w-3xl md:gap-4"
+        "md:flex-row md:shadow-2xl md:rounded-3xl md:items-stretch md:max-w-3xl md:gap-4"
       )}
     >
       <div
         className={classNames(
-          "bg-blue-800 rounded-b-3xl w-full",
+          "rounded-b-3xl w-full bg-gradient-to-b from-indigo-700 via-indigo-600 to-blue-700",
           "md:rounded-3xl md:max-w-xs md:flex"
         )}
       >
@@ -31,7 +31,7 @@ export const ResultsSummary = (props: ResultsSummaryProps) => {
           totalScore={totalScore}
         />
       </div>
-      <div className={classNames("w-full px-8 mb-4", "md:flex-1 md:p-8")}>
+      <div className={classNames("w-full px-4 mb-4", "md:flex-1 md:p-8")}>
         <SummaryCard
           title="Summary"
           summaryList={summaryList}
