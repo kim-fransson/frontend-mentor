@@ -14,11 +14,13 @@
   "dependencies": {
     "@fontsource-variable/hanken-grotesk": "5.0.13",
     "@fontsource-variable/outfit": "5.0.8",
+    "@fontsource-variable/roboto-flex": "5.0.8",
     "classnames": "2.3.2",
     "react": "^18.2.0",
     "react-aria": "3.28.0",
     "react-dom": "^18.2.0",
-    "react-stately": "3.26.0"
+    "react-stately": "3.26.0",
+    "tailwind-merge": "1.14.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "7.4.3",
