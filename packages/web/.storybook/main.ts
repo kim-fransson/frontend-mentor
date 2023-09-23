@@ -6,21 +6,14 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    {
-      name: "@storybook/addon-styling",
-      options: {
-        postCss: {
-          implementation: require.resolve("postcss"),
-        },
-      },
-    },
+    "@storybook/addon-styling",
   ],
   framework: {
     name: "@storybook/react-vite",
     options: {},
   },
   docs: {
-    autodocs: true,
+    autodocs: false,
     defaultName: "Overview",
   },
 };
