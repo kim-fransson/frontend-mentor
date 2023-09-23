@@ -16,8 +16,8 @@ export const Button = (props: ButtonProps) => {
       ref={buttonRef}
       className={twMerge(
         "text-center outline-none rounded-md text-white px-12 py-3 bg-slate-950 font-bold transition-all duration-300 ease-in-out",
-        "hover:bg-tomato-700 hover:text-gray-100 hover:scale-105",
-        isPressed && "bg-tomato-700 text-gray-100 scale-105",
+        "hover:bg-tomato-700 hover:text-gray-100",
+        isPressed && "bg-tomato-700 text-gray-100",
         props.className
       )}
     >

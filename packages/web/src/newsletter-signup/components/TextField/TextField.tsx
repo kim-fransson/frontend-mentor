@@ -23,7 +23,7 @@ export const TextField = (props: TextFieldProps) => {
       {props.errorMessage && (
         <span
           {...errorMessageProps}
-          className="text-xs tracking-tight font-semibold text-red-500"
+          className="text-xs text-right tracking-tight font-semibold text-red-500"
         >
           {props.errorMessage}
         </span>
