@@ -12,6 +12,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@fontsource-variable/hanken-grotesk": "5.0.13",
+    "@fontsource-variable/outfit": "5.0.8",
     "classnames": "2.3.2",
     "react": "^18.2.0",
     "react-aria": "3.28.0",

@@ -3,7 +3,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "hanken-grotesk": ["Hanken Grotesk", "sans-serif"],
+        "hanken-grotesk": ["Hanken Grotesk Variable", "sans-serif"],
+        outfit: ["Outfit Variable", "sans-serif"],
       },
     },
   },

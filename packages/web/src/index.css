@@ -1,8 +1,6 @@
+@import "@fontsource-variable/hanken-grotesk";
+@import "@fontsource-variable/outfit";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-  font-family: "Hanken Grotesk";
-  src: url("../fonts/HankenGrotesk-VariableFont_wght.ttf");
-}

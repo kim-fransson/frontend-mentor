@@ -1,9 +1,9 @@
 import { Summary } from "../Summary/Summary";
 
-import ReactionIcon from "../../../assets/icon-reaction.svg?react";
-import MemoryIcon from "../../../assets/icon-memory.svg?react";
-import VerbalIcon from "../../../assets/icon-verbal.svg?react";
-import VisualIcon from "../../../assets/icon-visual.svg?react";
+import ReactionIcon from "../../../assets/svg/icon-reaction.svg?react";
+import MemoryIcon from "../../../assets/svg/icon-memory.svg?react";
+import VerbalIcon from "../../../assets/svg/icon-verbal.svg?react";
+import VisualIcon from "../../../assets/svg/icon-visual.svg?react";
 
 export interface Summary {
   category: "Reaction" | "Memory" | "Verbal" | "Visual";
