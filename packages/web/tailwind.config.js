@@ -6,6 +6,7 @@ export default {
         "hanken-grotesk": ["Hanken Grotesk Variable", "sans-serif"],
         outfit: ["Outfit Variable", "sans-serif"],
         "roboto-flex": ["Roboto Flex Variable", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       colors: {
         tomato: {

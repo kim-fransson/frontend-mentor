@@ -2,6 +2,10 @@
 @import "@fontsource-variable/outfit";
 @import "@fontsource-variable/roboto-flex";
 
+@import "@fontsource/poppins/400-italic.css";
+@import "@fontsource/poppins/700.css";
+@import "@fontsource/poppins/800-italic.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

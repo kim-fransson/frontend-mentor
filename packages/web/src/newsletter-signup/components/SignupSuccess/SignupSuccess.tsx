@@ -13,7 +13,7 @@ export const SignupSuccess = (props: SignupSuccessProps) => {
   return (
     <div
       className={twMerge(
-        "flex flex-col h-screen px-4 font-roboto-flex",
+        "flex flex-col h-screen px-4 font-roboto-flex bg-white",
         "md:h-auto md:max-w-sm md:rounded-3xl md:shadow-2xl md:px-10 md:pt-8 md:pb-12 md:gap-5"
       )}
     >

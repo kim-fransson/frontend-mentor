@@ -15,6 +15,7 @@
     "@fontsource-variable/hanken-grotesk": "5.0.13",
     "@fontsource-variable/outfit": "5.0.8",
     "@fontsource-variable/roboto-flex": "5.0.8",
+    "@fontsource/poppins": "5.0.8",
     "@hookform/resolvers": "3.3.1",
     "classnames": "2.3.2",
     "react": "^18.2.0",
