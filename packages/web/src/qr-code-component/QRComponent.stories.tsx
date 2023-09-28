@@ -3,6 +3,12 @@ import { QRComponent } from "./QRComponent";
 
 const meta: Meta<typeof QRComponent> = {
   component: QRComponent,
+  parameters: {
+    backgrounds: {
+      default: "frontend-mentor",
+      values: [{ name: "frontend-mentor", value: "#d6e1f0" }],
+    },
+  },
   args: {},
 };
 export default meta;

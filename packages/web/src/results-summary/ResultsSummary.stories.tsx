@@ -3,6 +3,12 @@ import { ResultsSummary } from "./ResultsSummary";
 
 const meta: Meta<typeof ResultsSummary> = {
   component: ResultsSummary,
+  parameters: {
+    backgrounds: {
+      default: "frontend-mentor",
+      values: [{ name: "frontend-mentor", value: "#f7f7f7" }],
+    },
+  },
   args: {
     totalScore: 100,
   },

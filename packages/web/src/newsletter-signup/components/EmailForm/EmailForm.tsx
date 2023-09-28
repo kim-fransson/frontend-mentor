@@ -3,9 +3,11 @@ import { TextField } from "../TextField/TextField";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { twMerge } from "tailwind-merge";
 
 interface EmailFormProps {
   onSubscribe: (email: string) => void;
+  className?: string;
 }
 
 const schema = z.object({
@@ -16,31 +18,32 @@ const schema = z.object({
 type Schema = z.infer<typeof schema>;
 
 export const EmailForm = (props: EmailFormProps) => {
-  const { onSubscribe } = props;
+  const { onSubscribe, className } = props;
 
   const {
     control,
     handleSubmit,
-    formState: { isValid, errors },
+    formState: { isValid },
   } = useForm<Schema>({
     defaultValues: {
       email: "",
     },
+    mode: "all",
     resolver: zodResolver(schema),
   });
-
-  console.log({ isValid, errors });
 
   const onSubmit: SubmitHandler<Schema> = ({ email }) => {
     onSubscribe(email);
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={twMerge("flex flex-col gap-5", className)}
+    >
       <Controller
         name="email"
         control={control}
-        rules={{ required: true }}
         render={({
           field: { onChange, value, onBlur },
           formState: { errors },
@@ -55,7 +58,9 @@ export const EmailForm = (props: EmailFormProps) => {
           />
         )}
       />
-      <Button type="submit">Subscribe to monthly newsletter</Button>
+      <Button isDisabled={!isValid} type="submit">
+        Subscribe to monthly newsletter
+      </Button>
     </form>
   );
 };

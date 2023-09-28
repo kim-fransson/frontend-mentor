@@ -6,6 +6,7 @@ const meta: Meta<typeof SignupSuccess> = {
   component: SignupSuccess,
   args: {
     title: "Thanks for subscribing!",
+    email: "ash@loremcompany.com",
   },
   argTypes: { onDismiss: { action: "dismiss" } },
 };

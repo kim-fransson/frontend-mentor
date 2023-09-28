@@ -23,7 +23,7 @@ export const TextField = (props: TextFieldProps) => {
       {props.errorMessage && (
         <span
           {...errorMessageProps}
-          className="text-xs text-right tracking-tight font-semibold text-red-500"
+          className="text-xs text-right tracking-tight font-semibold text-red-600"
         >
           {props.errorMessage}
         </span>
@@ -35,7 +35,7 @@ export const TextField = (props: TextFieldProps) => {
           "col-span-2 border-gray-300 outline-none rounded-md border inline-block overflow-hidden py-2 px-5",
           "placeholder:text-base placeholder:text-gray-400",
           props.errorMessage
-            ? "border-red-500 bg-red-100 text-red-500"
+            ? "border-red-600 bg-red-100 text-red-700"
             : "focus-visible:border-gray-700"
         )}
       />

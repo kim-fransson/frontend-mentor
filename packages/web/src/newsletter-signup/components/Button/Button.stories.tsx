@@ -15,3 +15,9 @@ type Story = StoryObj<typeof Button>;
 export const Basic: Story = {
   args: {},
 };
+
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
+  },
+};
