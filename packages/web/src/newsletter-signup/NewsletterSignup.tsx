@@ -2,7 +2,7 @@ import { twMerge } from "tailwind-merge";
 import ListIcon from "../assets/svg/icon-list.svg?react";
 import { EmailForm } from "./components/EmailForm/EmailForm";
 
-interface NewsletterSignupProps {
+export interface NewsletterSignupProps {
   onSubscribe: (email: string) => void;
 }
 
