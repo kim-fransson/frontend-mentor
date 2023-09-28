@@ -22,7 +22,7 @@ export const ResultsSummary = (props: ResultsSummaryProps) => {
       <div
         className={classNames(
           "rounded-b-3xl w-full bg-gradient-to-b from-indigo-700 via-indigo-600 to-blue-700",
-          "md:rounded-3xl md:max-w-xs md:flex"
+          "md:rounded-3xl md:flex md:flex-1"
         )}
       >
         <AverageCard
@@ -31,7 +31,7 @@ export const ResultsSummary = (props: ResultsSummaryProps) => {
           totalScore={totalScore}
         />
       </div>
-      <div className={classNames("w-full px-4 mb-4", "md:flex-1 md:p-8")}>
+      <div className={classNames("w-full px-4 mb-4 max-w-md", "md:p-8")}>
         <SummaryCard
           title="Summary"
           summaryList={summaryList}

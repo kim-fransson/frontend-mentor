@@ -4,6 +4,7 @@ import { QRComponent } from "./QRComponent";
 const meta: Meta<typeof QRComponent> = {
   component: QRComponent,
   parameters: {
+    layout: "centered",
     backgrounds: {
       default: "frontend-mentor",
       values: [{ name: "frontend-mentor", value: "#d6e1f0" }],
