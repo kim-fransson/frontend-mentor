@@ -1,17 +1,13 @@
 import { useRef } from "react";
-import { AriaNumberFieldProps, useLocale, useNumberField } from "react-aria";
-import { useNumberFieldState } from "react-stately";
+import { AriaTextFieldProps, useTextField } from "react-aria";
 import { twMerge } from "tailwind-merge";
 
-interface NumberFieldProps extends AriaNumberFieldProps {}
+interface TextFieldProps extends AriaTextFieldProps {}
 
-export const NumberField = (props: NumberFieldProps) => {
-  const { locale } = useLocale();
-  const state = useNumberFieldState({ ...props, locale });
+export const TextField = (props: TextFieldProps) => {
   const inputRef = useRef(null);
-  const { labelProps, inputProps, errorMessageProps } = useNumberField(
+  const { labelProps, inputProps, errorMessageProps } = useTextField(
     props,
-    state,
     inputRef
   );
   return (
@@ -19,7 +15,7 @@ export const NumberField = (props: NumberFieldProps) => {
       <label
         className={twMerge(
           "font-bold text-xs tracking-[0.2em] uppercase text-gray-500",
-          props.errorMessage && "text-red-500"
+          props.isInvalid && "text-red-500"
         )}
         {...labelProps}
       >
@@ -32,7 +28,7 @@ export const NumberField = (props: NumberFieldProps) => {
           "selection:bg-violet-200",
           "focus-visible:border-violet-600",
           "placeholder:text-gray-400",
-          props.errorMessage && "border-red-400"
+          props.isInvalid && "border-red-400"
         )}
         ref={inputRef}
       />
