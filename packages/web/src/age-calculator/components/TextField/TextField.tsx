@@ -11,7 +11,7 @@ export const TextField = (props: TextFieldProps) => {
     inputRef
   );
   return (
-    <div className="inline-grid grid-cols-1 gap-y-2">
+    <div className="relative inline-grid grid-cols-1 gap-y-2">
       <label
         className={twMerge(
           "font-bold text-xs tracking-[0.2em] uppercase text-gray-500",
@@ -33,7 +33,10 @@ export const TextField = (props: TextFieldProps) => {
         ref={inputRef}
       />
       {props.errorMessage && (
-        <span className="text-red-400 italic text-xs" {...errorMessageProps}>
+        <span
+          className="absolute top-20 md:top-[5.5rem] text-red-400 italic text-xs tracking-tight"
+          {...errorMessageProps}
+        >
           {props.errorMessage}
         </span>
       )}

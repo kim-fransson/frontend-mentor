@@ -3,6 +3,8 @@ import { Button } from "../Button/Button";
 import { TextField } from "../TextField/TextField";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useFocusManager } from "react-aria";
+import { KeyboardEvent } from "react";
 
 const schema = z
   .object({
@@ -67,6 +69,18 @@ export const DateForm = (props: DateFormProps) => {
     },
   });
 
+  const focusManager = useFocusManager();
+  const onKeyDown = (e: KeyboardEvent) => {
+    switch (e.key) {
+      case "ArrowDown":
+        focusManager.focusNext({ wrap: true });
+        break;
+      case "ArrowUp":
+        focusManager.focusPrevious({ wrap: true });
+        break;
+    }
+  };
+
   return (
     <form
       className="max-w-xl"
@@ -74,8 +88,8 @@ export const DateForm = (props: DateFormProps) => {
         onSubmit(new Date(`${year}-${month}-${day}`))
       )}
     >
-      <div className="flex flex-col gap-2 justify-center md:justify-start md:pr-24 mb-14 md:mb-8">
-        <div className="flex gap-2 max-w-sm">
+      <div className="relative md:pr-24 mb-20 md:mb-8">
+        <div className="flex items-start gap-2 md:gap-6 max-w-sm">
           {inputs.map(({ name, placeholder }) => (
             <Controller
               key={name}
@@ -94,6 +108,7 @@ export const DateForm = (props: DateFormProps) => {
                     clearErrors("date");
                     onChange(e);
                   }}
+                  onKeyDown={onKeyDown}
                   value={value}
                 />
               )}
@@ -101,7 +116,7 @@ export const DateForm = (props: DateFormProps) => {
           ))}
         </div>
         {!errors.day && !errors.month && !errors.year && (
-          <span className="block text-red-400 italic text-xs">
+          <span className="absolute top-[5.5rem] text-red-400 italic text-xs">
             {errors.date?.message}
           </span>
         )}
@@ -111,6 +126,7 @@ export const DateForm = (props: DateFormProps) => {
           className="absolute top-1/2 left-1/2 md:left-full -translate-x-1/2 -translate-y-1/2"
           type="submit"
           aria-label="calculate age"
+          onKeyDown={onKeyDown}
         />
         <hr className="w-full border border-gray-200" />
       </div>

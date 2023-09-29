@@ -22,7 +22,7 @@ export const Button = (props: ButtonProps) => {
       {...mergeProps(focusProps, buttonProps)}
       className={twMerge(
         "rounded-full p-4 outline-none text-xs bg-violet-600 transition-all duration-200 ease-in-out",
-        (isPressed || isFocusVisible) && "bg-gray-950",
+        (isPressed || isFocusVisible) && "bg-gray-950 scale-105",
         props.className
       )}
     >
