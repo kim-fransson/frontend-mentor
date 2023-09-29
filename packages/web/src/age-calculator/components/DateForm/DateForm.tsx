@@ -4,33 +4,25 @@ import { TextField } from "../TextField/TextField";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-const required_error = "This field is required";
-const valid_day = "Must be a valid day";
-const valid_month = "Must be a valid month";
-
 const schema = z
   .object({
     day: z
       .string()
-      .min(1, { message: required_error })
+      .min(1, "Day is required")
       .refine(
         (day) => Number.parseInt(day) >= 1 && Number.parseInt(day) <= 31,
-        {
-          message: valid_day,
-        }
+        "Must be a valid day"
       ),
     month: z
       .string()
-      .min(1, { message: required_error })
+      .min(1, "Month is required")
       .refine(
         (day) => Number.parseInt(day) >= 1 && Number.parseInt(day) <= 12,
-        {
-          message: valid_month,
-        }
+        "Must be a valid month"
       ),
     year: z
       .string()
-      .min(1, { message: required_error })
+      .min(1, "Year is required")
       .refine((day) => Number.parseInt(day) <= new Date().getFullYear(), {
         message: "Must be in the past",
       }),
@@ -39,19 +31,17 @@ const schema = z
   .superRefine(({ day, month, year }, ctx) => {
     const date = new Date(`${year}-${month}-${day}`);
     if (date.getTime() !== date.getTime()) {
-      console.log("issue");
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: "Must be a valid date",
         path: ["date"],
       });
     }
-    return;
   });
 type FormData = z.infer<typeof schema>;
 
 export interface DateFormProps {
-  onSubmit: (value: FormData) => void;
+  onSubmit: (value: Date) => void;
 }
 
 const inputs = [
@@ -65,9 +55,10 @@ export const DateForm = (props: DateFormProps) => {
   const {
     control,
     handleSubmit,
+    clearErrors,
     formState: { errors },
   } = useForm<FormData>({
-    mode: "all",
+    mode: "onSubmit",
     resolver: zodResolver(schema),
     defaultValues: {
       day: "",
@@ -77,31 +68,41 @@ export const DateForm = (props: DateFormProps) => {
   });
 
   return (
-    <form onSubmit={handleSubmit((data) => console.log(data))}>
-      {inputs.map(({ name, placeholder }) => (
-        <Controller
-          key={name}
-          name={name}
-          control={control}
-          render={({
-            field: { onChange, value },
-            fieldState: { error, invalid },
-          }) => (
-            <TextField
-              errorMessage={
-                name === "day"
-                  ? error?.message || errors.date?.message
-                  : error?.message
-              }
-              isInvalid={errors.date?.message !== undefined || invalid}
-              placeholder={placeholder}
-              label={name}
-              onChange={onChange}
-              value={value}
-            />
-          )}
-        />
-      ))}
+    <form
+      onSubmit={handleSubmit(({ year, month, day }) =>
+        onSubmit(new Date(`${year}-${month}-${day}`))
+      )}
+    >
+      <div>
+        {inputs.map(({ name, placeholder }) => (
+          <Controller
+            key={name}
+            name={name}
+            control={control}
+            render={({
+              field: { onChange, value },
+              fieldState: { error, invalid },
+            }) => (
+              <TextField
+                errorMessage={error?.message}
+                isInvalid={invalid || errors.date?.message !== undefined}
+                placeholder={placeholder}
+                label={name}
+                onChange={(e) => {
+                  clearErrors("date");
+                  onChange(e);
+                }}
+                value={value}
+              />
+            )}
+          />
+        ))}
+        {!errors.day && !errors.month && !errors.year && (
+          <span className="text-red-400 italic text-xs">
+            {errors.date?.message}
+          </span>
+        )}
+      </div>
       <Button type="submit" aria-label="calculate age" />
     </form>
   );
