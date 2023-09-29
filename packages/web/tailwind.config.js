@@ -7,6 +7,7 @@ export default {
         outfit: ["Outfit Variable", "sans-serif"],
         "roboto-flex": ["Roboto Flex Variable", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        ubuntu: ["Ubuntu", "sans-serif"],
       },
       colors: {
         tomato: {

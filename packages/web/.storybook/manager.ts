@@ -7,6 +7,7 @@ addons.setConfig({
       "qr-code-component",
       "newsletter-signup",
       "age-calculator",
+      "multi-step-form",
     ],
   },
 });
