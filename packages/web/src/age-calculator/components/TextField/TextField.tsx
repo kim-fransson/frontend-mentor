@@ -24,7 +24,7 @@ export const TextField = (props: TextFieldProps) => {
       <input
         {...inputProps}
         className={twMerge(
-          "border tracking-wide cursor-pointer outline-none border-gray-300 text-gray-800 rounded-md text-2xl font-bold py-3 px-4",
+          "border tracking-wide cursor-pointer outline-none border-gray-300 text-gray-800 rounded-md text-base md:text-2xl font-bold py-3 px-4",
           "selection:bg-violet-200",
           "focus-visible:border-violet-600",
           "placeholder:text-gray-400",

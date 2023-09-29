@@ -69,41 +69,51 @@ export const DateForm = (props: DateFormProps) => {
 
   return (
     <form
+      className="max-w-xl"
       onSubmit={handleSubmit(({ year, month, day }) =>
         onSubmit(new Date(`${year}-${month}-${day}`))
       )}
     >
-      <div>
-        {inputs.map(({ name, placeholder }) => (
-          <Controller
-            key={name}
-            name={name}
-            control={control}
-            render={({
-              field: { onChange, value },
-              fieldState: { error, invalid },
-            }) => (
-              <TextField
-                errorMessage={error?.message}
-                isInvalid={invalid || errors.date?.message !== undefined}
-                placeholder={placeholder}
-                label={name}
-                onChange={(e) => {
-                  clearErrors("date");
-                  onChange(e);
-                }}
-                value={value}
-              />
-            )}
-          />
-        ))}
+      <div className="flex flex-col gap-2 justify-center md:justify-start md:pr-24 mb-14 md:mb-8">
+        <div className="flex gap-2 max-w-sm">
+          {inputs.map(({ name, placeholder }) => (
+            <Controller
+              key={name}
+              name={name}
+              control={control}
+              render={({
+                field: { onChange, value },
+                fieldState: { error, invalid },
+              }) => (
+                <TextField
+                  errorMessage={error?.message}
+                  isInvalid={invalid || errors.date?.message !== undefined}
+                  placeholder={placeholder}
+                  label={name}
+                  onChange={(e) => {
+                    clearErrors("date");
+                    onChange(e);
+                  }}
+                  value={value}
+                />
+              )}
+            />
+          ))}
+        </div>
         {!errors.day && !errors.month && !errors.year && (
-          <span className="text-red-400 italic text-xs">
+          <span className="block text-red-400 italic text-xs">
             {errors.date?.message}
           </span>
         )}
       </div>
-      <Button type="submit" aria-label="calculate age" />
+      <div className="flex relative max-w-md">
+        <Button
+          className="absolute top-1/2 left-1/2 md:left-full -translate-x-1/2 -translate-y-1/2"
+          type="submit"
+          aria-label="calculate age"
+        />
+        <hr className="w-full border border-gray-200" />
+      </div>
     </form>
   );
 };

@@ -3,12 +3,8 @@ import { DateForm } from "./DateForm";
 
 const meta: Meta<typeof DateForm> = {
   component: DateForm,
-  args: {
-    onSubmit: (date) => {
-      console.log(date);
-    },
-  },
-  argTypes: { onSubmit: { action: "subscribe" } },
+  args: {},
+  argTypes: { onSubmit: { action: "date" } },
 };
 export default meta;
 

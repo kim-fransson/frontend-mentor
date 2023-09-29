@@ -8,7 +8,9 @@ import {
 import { twMerge } from "tailwind-merge";
 import ArrowIcon from "../../../assets/svg/icon-arrow.svg?react";
 
-interface ButtonProps extends AriaButtonProps {}
+interface ButtonProps extends AriaButtonProps {
+  className: string;
+}
 
 export const Button = (props: ButtonProps) => {
   const ref = useRef(null);
@@ -20,10 +22,11 @@ export const Button = (props: ButtonProps) => {
       {...mergeProps(focusProps, buttonProps)}
       className={twMerge(
         "rounded-full p-4 outline-none text-xs bg-violet-600 transition-all duration-200 ease-in-out",
-        (isPressed || isFocusVisible) && "bg-gray-950"
+        (isPressed || isFocusVisible) && "bg-gray-950",
+        props.className
       )}
     >
-      <ArrowIcon className="h-6 w-6" />
+      <ArrowIcon className="h-6 w-6 stroke-2" />
     </button>
   );
 };

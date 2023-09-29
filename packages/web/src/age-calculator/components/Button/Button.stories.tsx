@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
-import ArrowIcon from "../../../assets/svg/icon-arrow.svg?react";
 
 const meta: Meta<typeof Button> = {
   component: Button,
