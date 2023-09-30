@@ -20,7 +20,7 @@ const getClasses = (
   isDisabled?: boolean
 ) => {
   const base =
-    "disabled:cursor-not-allowed outline-none select-none capitalize";
+    "transition-all duration-150 disabled:cursor-not-allowed outline-none select-none capitalize";
   switch (variant) {
     case "primary":
       return twMerge(

@@ -26,9 +26,9 @@ export const Checkbox = (props: CheckboxProps) => {
       </VisuallyHidden>
       <div
         className={twMerge(
-          "inline-block cursor-pointer relative w-5 h-5 bg-white rounded border border-gray-300",
-          isSelected && "bg-blue-600 border-blue-600",
-          isFocusVisible && "border-violet-500"
+          "transition-all duration-150 inline-block cursor-pointer relative w-5 h-5 bg-white rounded border border-gray-300",
+          isSelected && "bg-indigo-700 border-indigo-700",
+          isFocusVisible && "border-2 border-violet-500"
         )}
       >
         {isSelected && (
