@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PlanSelection } from "../PlanSelection/PlanSelection";
+import { PlanSelection } from "./PlanSelection/PlanSelection";
 
 export interface Plan {
   id: number;

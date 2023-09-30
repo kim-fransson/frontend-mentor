@@ -20,7 +20,7 @@ export const Checkbox = (props: CheckboxProps) => {
   const isSelected = state.isSelected && !props.isIndeterminate;
 
   return (
-    <label>
+    <label className="inline-flex">
       <VisuallyHidden>
         <input {...inputProps} {...focusProps} ref={ref} />
       </VisuallyHidden>
