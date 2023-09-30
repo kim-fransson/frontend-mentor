@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { PlanSelection } from "./PlanSelection";
-import ArcadeIcon from "../../../assets/svg/icon-arcade.svg?react";
 
 const meta: Meta<typeof PlanSelection> = {
   component: PlanSelection,
@@ -15,7 +14,7 @@ type Story = StoryObj<typeof PlanSelection>;
 
 export const Monthly: Story = {
   args: {
-    icon: <ArcadeIcon />,
+    icon: "/svg/icon-arcade.svg",
     title: "Arcade",
     price: 9,
     interval: "monthly",
@@ -24,7 +23,7 @@ export const Monthly: Story = {
 
 export const Yearly: Story = {
   args: {
-    icon: <ArcadeIcon />,
+    icon: "/svg/icon-arcade.svg",
     title: "Arcade",
     price: 90,
     interval: "yearly",

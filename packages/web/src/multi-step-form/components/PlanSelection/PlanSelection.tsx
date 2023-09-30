@@ -9,7 +9,7 @@ import { useToggleState } from "react-stately";
 import { twMerge } from "tailwind-merge";
 
 interface PlanSelectionProps extends AriaToggleButtonProps {
-  icon: JSX.Element;
+  icon: string;
   title: string;
   price: number;
   interval: "monthly" | "yearly";
@@ -35,8 +35,8 @@ export const PlanSelection = (props: PlanSelectionProps) => {
         isFocusVisible && "border-violet-700"
       )}
     >
-      {icon}
-      <h2 className="font-bold text-gray-800 col-start-2 justify-self-start md:col-start-1 md:mt-10">
+      <img src={icon} alt={`${title} icon`} />
+      <h2 className="capitalize font-bold text-gray-800 col-start-2 justify-self-start md:col-start-1 md:mt-10">
         {title}
       </h2>
       <span className="text-gray-400 text-sm col-start-2 justify-self-start -mt-4 md:-mt-0 md:col-start-1">
