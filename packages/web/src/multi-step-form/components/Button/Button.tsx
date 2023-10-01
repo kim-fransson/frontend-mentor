@@ -52,11 +52,11 @@ const getClasses = (
       );
     case "link":
       return twMerge(
-        "text-gray-500 tracking-tight decoration-solid underline text-sm font-semibold",
-        "hover:text-violet-500",
+        "text-gray-400 tracking-tight decoration-2 decoration-solid underline decoration-gray-400 text-sm",
+        "hover:text-violet-500 hover:decoration-violet-600",
         isPressed && "scale-95",
-        isFocusVisible && "text-violet-500",
-        "disabled:text-gray-300",
+        isFocusVisible && "text-violet-500 decoration-violet-600",
+        "disabled:text-gray-300 disabled:decoration-gray-300",
         base
       );
   }
