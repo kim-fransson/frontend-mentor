@@ -22,11 +22,11 @@ export const Checkbox = (props: CheckboxProps) => {
   return (
     <label className="inline-flex">
       <VisuallyHidden>
-        <input {...inputProps} {...focusProps} ref={ref} />
+        <input tabIndex={-1} {...inputProps} {...focusProps} ref={ref} />
       </VisuallyHidden>
       <div
         className={twMerge(
-          "transition-all duration-150 inline-block cursor-pointer relative w-5 h-5 bg-white rounded border border-gray-300",
+          "transition-all duration-100 inline-block cursor-pointer relative w-5 h-5 bg-white rounded border border-gray-300",
           isSelected && "bg-indigo-700 border-indigo-700",
           isFocusVisible && "border-2 border-violet-500"
         )}

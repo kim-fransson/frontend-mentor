@@ -60,7 +60,7 @@ export const AddOnSelectionGroup = (props: AddOnSelectionGroupProps) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-4">
+    <div className="flex flex-col gap-4">
       {addOns.map((addOn) => (
         <AddOnSelection
           isSelected={

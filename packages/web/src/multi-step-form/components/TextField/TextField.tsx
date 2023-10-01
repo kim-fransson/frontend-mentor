@@ -14,7 +14,7 @@ export const TextField = (props: TextFieldProps) => {
     <div className="relative inline-grid grid-cols-2 gap-y-[0.125rem]">
       <label
         className={twMerge(
-          "text-xs cursor-pointer capitalize text-gray-900",
+          "text-xs tracking-tight font-medium cursor-pointer capitalize text-indigo-900",
           props.isInvalid && ""
         )}
         {...labelProps}

@@ -28,11 +28,11 @@ export const PlanSelection = (props: PlanSelectionProps) => {
       {...mergeProps(buttonProps, focusProps)}
       ref={ref}
       className={twMerge(
-        "transition-all duration-300 border w-full outline-none border-gray-200 rounded-lg p-4 select-none hover:bg-violet-50",
+        "transition-all duration-300 border w-full outline-none border-gray-200 rounded-lg p-4 select-none hover:bg-indigo-50",
         "grid grid-cols-[auto_minmax(0,_1fr)] gap-x-4",
         "md:grid-cols-1",
-        state.isSelected && "border-violet-700 bg-violet-50",
-        isFocusVisible && "border-violet-700"
+        state.isSelected && "border-indigo-700 bg-indigo-50",
+        isFocusVisible && "border-indigo-700"
       )}
     >
       <img src={icon} alt={`${title} icon`} />
