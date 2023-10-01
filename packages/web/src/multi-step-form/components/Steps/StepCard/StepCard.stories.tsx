@@ -23,10 +23,13 @@ export const Basic: Story = {
         Custom content
       </div>
     ),
+    onNextButtonLabel: undefined,
+    onNextButtonVariant: undefined,
+    onBackButtonLabel: undefined,
   },
   argTypes: {
     onBack: { action: "back" },
-    onNext: { action: "next" },
+    onNext: { action: "next step" },
   },
 };
 
@@ -39,6 +42,7 @@ export const Confirm: Story = {
         Custom content
       </div>
     ),
+    onBackButtonLabel: undefined,
     onNextButtonLabel: "Confirm",
     onNextButtonVariant: "secondary",
   },
@@ -50,6 +54,8 @@ export const Confirm: Story = {
 
 export const Minimum: Story = {
   args: {
+    onBack: undefined,
+    onNext: undefined,
     children: (
       <div className="border rounded-lg flex items-center justify-center border-dashed border-violet-700 h-80">
         Custom content

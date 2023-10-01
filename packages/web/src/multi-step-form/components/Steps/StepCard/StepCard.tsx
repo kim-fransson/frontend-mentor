@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { Button, ButtonVariant } from "../Button/Button";
+import { Button, ButtonVariant } from "../../Button/Button";
 import { twMerge } from "tailwind-merge";
 
 interface StepCardProps extends PropsWithChildren {
@@ -8,6 +8,7 @@ interface StepCardProps extends PropsWithChildren {
   onBack?: () => void;
   onBackButtonLabel?: string;
   onNext?: () => void;
+  onNextDisabled: boolean;
   onNextButtonLabel?: string;
   onNextButtonVariant?: ButtonVariant;
 }
@@ -19,10 +20,12 @@ export const StepCard = (props: StepCardProps) => {
     onBack,
     onBackButtonLabel = "Go Back",
     onNext,
+    onNextDisabled = false,
     onNextButtonLabel = "Next Step",
     onNextButtonVariant = "primary",
     children,
   } = props;
+
   return (
     <div className="bg-white shadow-lg rounded-xl px-6 pt-7 pb-10 flex flex-col">
       {props.title && (
@@ -37,7 +40,7 @@ export const StepCard = (props: StepCardProps) => {
       {(onBack || onNext) && (
         <div
           className={twMerge(
-            "flex items-center justify-between bg-white fixed bottom-0 left-0 right-0 px-4 py-4",
+            "flex items-center bg-white fixed bottom-0 left-0 right-0 px-4 py-4",
             "md:static md:p-0 md:pt-32"
           )}
         >
@@ -47,7 +50,12 @@ export const StepCard = (props: StepCardProps) => {
             </Button>
           )}
           {onNext && (
-            <Button variant={onNextButtonVariant} onPress={onNext}>
+            <Button
+              isDisabled={onNextDisabled}
+              className="ml-auto"
+              variant={onNextButtonVariant}
+              onPress={onNext}
+            >
               {onNextButtonLabel}
             </Button>
           )}

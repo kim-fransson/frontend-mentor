@@ -11,6 +11,7 @@ export type ButtonVariant = "primary" | "secondary" | "ghost" | "link";
 
 export interface ButtonProps extends AriaButtonProps {
   variant: ButtonVariant;
+  className?: string;
 }
 
 const getClasses = (
@@ -63,7 +64,7 @@ const getClasses = (
 
 export const Button = (props: ButtonProps) => {
   const ref = useRef(null);
-  const { children, variant, isDisabled } = props;
+  const { children, variant, isDisabled, className } = props;
   const { buttonProps, isPressed } = useButton(props, ref);
   const { isFocusVisible, focusProps } = useFocusRing();
 
@@ -75,7 +76,10 @@ export const Button = (props: ButtonProps) => {
   );
 
   return (
-    <button {...mergeProps(focusProps, buttonProps)} className={buttonClasses}>
+    <button
+      {...mergeProps(focusProps, buttonProps)}
+      className={twMerge(buttonClasses, className)}
+    >
       {children}
     </button>
   );
