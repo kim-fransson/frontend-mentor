@@ -22,6 +22,12 @@ export default {
           900: "hsl(4, 100%, 87%)",
         },
       },
+      backgroundImage: {
+        "multi-step-form-sidebar-desktop":
+          "url('/images/bg-sidebar-desktop.svg')",
+        "multi-step-form-sidebar-mobile":
+          "url('/images/bg-sidebar-mobile.svg')",
+      },
     },
   },
   plugins: [],

@@ -9,11 +9,11 @@ interface StepProps {
 export const Step = (props: StepProps) => {
   const { active, title, order } = props;
   return (
-    <div className="inline-grid grid-cols-[auto_minmax(0,_1fr)] md:gap-x-4">
+    <div className="inline-grid grid-cols-[auto_minmax(0,_1fr)] md:gap-x-4 select-none">
       <div
         className={twMerge(
           "selection-none w-8 h-8 flex justify-center items-center text-sm rounded-full text-gray-200 border border-gray-200",
-          "col-start-1 pb-[0.125rem]",
+          "col-start-1 md:pb-[0.125rem]",
           active && "text-gray-950 bg-sky-200 border-sky-200 font-medium"
         )}
       >

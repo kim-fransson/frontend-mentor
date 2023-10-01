@@ -1,11 +1,11 @@
 import { AddOn } from "../../AddOnSelectionGroup/AddOnSelectionGroup/AddOnSelectionGroup";
 import { Button } from "../../Button/Button";
-import { Plan } from "../../PlanSelectionGroup/PlanSelectionGroup";
+import { YourPlan } from "../SelectYourPlanStep/SelectYourPlanStep";
 import { StepCard } from "../StepCard/StepCard";
 
-interface Selections {
-  addons: AddOn[];
-  plan: Plan;
+export interface Selections {
+  addons?: AddOn[];
+  yourPlan?: YourPlan;
 }
 
 interface FinishingStepProps {
@@ -13,23 +13,26 @@ interface FinishingStepProps {
   onConfirm: () => void;
   onChangePlan: () => void;
   selections: Selections;
-  interval: "monthly" | "yearly";
 }
 
 export const FinishingUpStep = (props: FinishingStepProps) => {
-  const { onBack, onConfirm, onChangePlan, selections, interval } = props;
-  const { plan, addons } = selections;
+  const { onBack, onConfirm, onChangePlan, selections } = props;
+  const { yourPlan, addons } = selections;
+  const { plan, interval } = yourPlan as YourPlan;
+
+  const planPrice =
+    interval === "monthly" ? plan!.monthlyPrice : plan!.yearlyPrice;
 
   const priceIntervalPostFix = interval === "monthly" ? "/mo" : "/yr";
   const totalPrice =
     interval === "monthly"
-      ? plan.monthlyPrice +
-        addons.reduce(
+      ? planPrice +
+        addons!.reduce(
           (accumulator, addon) => accumulator + addon.monthlyPrice,
           0
         )
-      : plan.yearlyPrice +
-        addons.reduce(
+      : planPrice +
+        addons!.reduce(
           (accumulator, addon) => accumulator + addon.yearlyPrice,
           0
         );
@@ -49,24 +52,24 @@ export const FinishingUpStep = (props: FinishingStepProps) => {
           <div className="flex items-center">
             <div className="flex flex-col items-start">
               <span className="capitalize font-bold text-sky-800 text-sm">
-                {plan.title} ({interval})
+                {plan!.title} ({interval})
               </span>
               <Button onPress={onChangePlan} variant="link">
                 Change
               </Button>
             </div>
             <span className="ml-auto text-sm font-bold text-sky-800">
-              ${interval === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
+              ${planPrice}
               {priceIntervalPostFix}
             </span>
           </div>
 
           <hr className="border-gray-300" />
 
-          {addons
+          {addons!
             .sort((a, b) => (a.id < b.id ? 0 : 1))
             .map((addon) => (
-              <div className="flex items-center">
+              <div key={addon.id} className="flex items-center">
                 <span className="text-gray-400 text-sm">{addon.title}</span>
                 <span className="ml-auto text-sm text-gray-500 font-medium">
                   +$

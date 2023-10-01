@@ -4,7 +4,7 @@ import { MultiStepForm } from "./MultiStepForm";
 const meta: Meta<typeof MultiStepForm> = {
   component: MultiStepForm,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
     backgrounds: {
       default: "frontend-mentor",
       values: [{ name: "frontend-mentor", value: "#eef5ff" }],

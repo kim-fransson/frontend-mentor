@@ -27,7 +27,11 @@ export const StepCard = (props: StepCardProps) => {
   } = props;
 
   return (
-    <div className="bg-white shadow-lg rounded-xl px-6 pt-7 pb-10 flex flex-col">
+    <div
+      className={twMerge(
+        "bg-white shadow-lg rounded-xl px-6 pt-7 pb-10 flex flex-col"
+      )}
+    >
       {props.title && (
         <h2 className="text-sky-800 tracking-wide font-bold text-2xl">
           {title}
@@ -44,19 +48,19 @@ export const StepCard = (props: StepCardProps) => {
             "md:static md:p-0 md:pt-32"
           )}
         >
-          {onBack && (
-            <Button variant="ghost" onPress={onBack}>
-              {onBackButtonLabel}
-            </Button>
-          )}
           {onNext && (
             <Button
               isDisabled={onNextDisabled}
-              className="ml-auto"
+              className="ml-auto order-2"
               variant={onNextButtonVariant}
               onPress={onNext}
             >
               {onNextButtonLabel}
+            </Button>
+          )}
+          {onBack && (
+            <Button className="order-1" variant="ghost" onPress={onBack}>
+              {onBackButtonLabel}
             </Button>
           )}
         </div>

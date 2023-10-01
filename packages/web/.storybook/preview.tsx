@@ -8,7 +8,7 @@ const customViewports = {
     name: "Frontend Mentor Mobile",
     styles: {
       width: "375px",
-      height: "812px",
+      height: "712px",
     },
   },
 };

@@ -6,7 +6,7 @@ import {
 } from "../../PlanSelectionGroup/PlanSelectionGroup";
 import { StepCard } from "../StepCard/StepCard";
 
-interface YourPlan {
+export interface YourPlan {
   plan?: Plan;
   interval: "monthly" | "yearly";
 }
