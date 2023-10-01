@@ -36,7 +36,7 @@ export const PlanSelection = (props: PlanSelectionProps) => {
       )}
     >
       <img src={icon} alt={`${title} icon`} />
-      <h2 className="capitalize font-bold text-gray-800 col-start-2 justify-self-start md:col-start-1 md:mt-10">
+      <h2 className="capitalize font-bold text-sky-800 col-start-2 justify-self-start md:col-start-1 md:mt-10">
         {title}
       </h2>
       <span className="text-gray-400 text-sm col-start-2 justify-self-start -mt-4 md:-mt-0 md:col-start-1">

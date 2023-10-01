@@ -25,10 +25,10 @@ const getClasses = (
   switch (variant) {
     case "primary":
       return twMerge(
-        "bg-blue-950 text-white rounded-md px-7 py-3 tracking-wider text-base",
-        "hover:bg-blue-700",
-        isPressed && "scale-95 bg-blue-700",
-        isFocusVisible && "bg-blue-700",
+        "bg-sky-800 text-white rounded-md px-7 py-3 tracking-wider text-base",
+        "hover:bg-sky-600",
+        isPressed && "scale-95 bg-sky-600",
+        isFocusVisible && "bg-sky-600",
         "disabled:bg-gray-500 disabled:text-gray-200",
         base
       );
@@ -44,9 +44,9 @@ const getClasses = (
     case "ghost":
       return twMerge(
         "text-gray-400 tracking-normal font-semibold text-base",
-        "hover:text-blue-600",
+        "hover:text-sky-800",
         isPressed && "scale-95",
-        isFocusVisible && "text-blue-600",
+        isFocusVisible && "text-sky-800",
         "disabled:text-gray-300",
         base
       );

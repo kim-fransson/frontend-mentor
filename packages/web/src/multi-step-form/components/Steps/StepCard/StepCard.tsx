@@ -8,7 +8,7 @@ interface StepCardProps extends PropsWithChildren {
   onBack?: () => void;
   onBackButtonLabel?: string;
   onNext?: () => void;
-  onNextDisabled: boolean;
+  onNextDisabled?: boolean;
   onNextButtonLabel?: string;
   onNextButtonVariant?: ButtonVariant;
 }
@@ -29,7 +29,7 @@ export const StepCard = (props: StepCardProps) => {
   return (
     <div className="bg-white shadow-lg rounded-xl px-6 pt-7 pb-10 flex flex-col">
       {props.title && (
-        <h2 className="text-gray-900 tracking-wide font-bold text-2xl">
+        <h2 className="text-sky-800 tracking-wide font-bold text-2xl">
           {title}
         </h2>
       )}

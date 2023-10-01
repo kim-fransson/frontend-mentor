@@ -17,7 +17,7 @@ export const IntervalSwitch = (props: IntervalSwitchProps) => {
       <span
         className={twMerge(
           "font-medium text-gray-400 transition-all duration-150",
-          activeInterval === "monthly" && "text-blue-950"
+          activeInterval === "monthly" && "text-sky-800"
         )}
       >
         Monthly
@@ -32,7 +32,7 @@ export const IntervalSwitch = (props: IntervalSwitchProps) => {
       <span
         className={twMerge(
           "font-medium text-gray-400 transition-all duration-150",
-          activeInterval === "yearly" && "text-blue-950"
+          activeInterval === "yearly" && "text-sky-800"
         )}
       >
         Yearly

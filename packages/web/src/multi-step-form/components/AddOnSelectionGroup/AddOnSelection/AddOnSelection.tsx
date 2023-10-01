@@ -40,7 +40,7 @@ export const AddOnSelection = (props: AddOnSelectionProps) => {
       />
 
       <div className="flex items-baseline flex-col gap-1">
-        <h2 className="font-bold text-sm text-blue-950">{title}</h2>
+        <h2 className="font-bold text-sm text-sky-800">{title}</h2>
         <p className="text-xs text-gray-400 font-medium">{description}</p>
       </div>
 

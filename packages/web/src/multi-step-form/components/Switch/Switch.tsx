@@ -23,7 +23,7 @@ export const Switch = (props: SwitchProps) => {
       </VisuallyHidden>
       <div
         className={twMerge(
-          "border-2 border-transparent cursor-pointer w-9 h-5 p-1 rounded-xl relative bg-blue-950",
+          "border-2 border-transparent cursor-pointer w-9 h-5 p-1 rounded-xl relative bg-sky-800",
           isFocusVisible && "border-2 border-violet-500"
         )}
       >
