@@ -7,7 +7,7 @@ import {
 } from "react-aria";
 import { twMerge } from "tailwind-merge";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "link";
+export type ButtonVariant = "primary" | "secondary" | "ghost" | "link";
 
 export interface ButtonProps extends AriaButtonProps {
   variant: ButtonVariant;
@@ -42,7 +42,7 @@ const getClasses = (
       );
     case "ghost":
       return twMerge(
-        "text-gray-500 tracking-normal font-semibold text-base",
+        "text-gray-400 tracking-normal font-semibold text-base",
         "hover:text-blue-600",
         isPressed && "scale-95",
         isFocusVisible && "text-blue-600",

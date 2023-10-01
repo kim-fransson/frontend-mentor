@@ -24,9 +24,31 @@ export const Basic: Story = {
       </div>
     ),
   },
+  argTypes: {
+    onBack: { action: "back" },
+    onNext: { action: "next" },
+  },
 };
 
-export const NoTitleAndDescription: Story = {
+export const Confirm: Story = {
+  args: {
+    title: "Title",
+    description: "Short description what this card contains.",
+    children: (
+      <div className="border rounded-lg flex items-center justify-center border-dashed border-violet-700 h-80">
+        Custom content
+      </div>
+    ),
+    onNextButtonLabel: "Confirm",
+    onNextButtonVariant: "secondary",
+  },
+  argTypes: {
+    onBack: { action: "back" },
+    onNext: { action: "confirm" },
+  },
+};
+
+export const Minimum: Story = {
   args: {
     children: (
       <div className="border rounded-lg flex items-center justify-center border-dashed border-violet-700 h-80">
