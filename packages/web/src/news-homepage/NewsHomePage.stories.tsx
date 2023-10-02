@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NewsHomePage } from "./NewsHomePage";
+import { NewsHomepage } from "./NewsHomepage";
 
-const meta: Meta<typeof NewsHomePage> = {
-  component: NewsHomePage,
+const meta: Meta<typeof NewsHomepage> = {
+  component: NewsHomepage,
   parameters: {
     layout: "fullscreen",
     backgrounds: {
@@ -14,7 +14,7 @@ const meta: Meta<typeof NewsHomePage> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof NewsHomePage>;
+type Story = StoryObj<typeof NewsHomepage>;
 
 export const Basic: Story = {
   args: {},

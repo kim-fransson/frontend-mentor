@@ -1,5 +1,5 @@
-interface NewsHomePageProps {}
+interface NewsHomepageProps {}
 
-export const NewsHomePage = (props: NewsHomePageProps) => {
+export const NewsHomepage = (props: NewsHomepageProps) => {
   return <div>Hello</div>;
 };
