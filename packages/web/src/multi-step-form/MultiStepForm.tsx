@@ -8,6 +8,7 @@ import {
   Selections,
 } from "./components/Steps/FinishingUpStep/FinishingUpStep";
 import { ConfirmationStep } from "./components/Steps/ConfirmationStep/ConfirmationStep";
+import { twMerge } from "tailwind-merge";
 
 const steps = ["your info", "select plan", "add-ons", "summary"];
 
@@ -70,9 +71,19 @@ export const MultiStepForm = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center">
+    <div
+      className={twMerge(
+        "h-screen flex flex-col font-ubuntu items-center",
+        "md:items-stretch md:justify-stretch md:flex-row max-w-5xl md:rounded-lg md:shadow-lg md:h-auto md:bg-white md:p-4 md:gap-24"
+      )}
+    >
       <Sidebar steps={steps} activeStep={activeStep} />
-      <div className="absolute top-24 px-4 pb-24">
+      <div
+        className={twMerge(
+          "absolute top-24 px-4 pb-24",
+          "md:static md:flex md:top-0 md:px-0 md:pb-0 md:pr-16 md:pt-4 md:flex-1"
+        )}
+      >
         {showConfirmation ? <ConfirmationStep /> : renderStep(activeStep)}
       </div>
     </div>

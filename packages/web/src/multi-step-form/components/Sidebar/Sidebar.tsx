@@ -8,10 +8,10 @@ interface SidebarProps {
 export const Sidebar = (props: SidebarProps) => {
   const { activeStep, steps } = props;
   return (
-    <div className="flex w-screen relative justify-center md:justify-start">
+    <div className="flex w-screen md:w-auto relative justify-center md:justify-start">
       <picture className="w-full h-auto">
         <source
-          media="(min-width:28rem)"
+          media="(min-width:768px)"
           srcSet="/images/bg-sidebar-desktop.svg"
         />
         <img

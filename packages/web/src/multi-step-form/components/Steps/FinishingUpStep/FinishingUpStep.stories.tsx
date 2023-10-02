@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { FinishingUpStep } from "./FinishingUpStep";
 import { addons } from "@storybook/manager-api";
+import { YourPlan } from "../SelectYourPlanStep/SelectYourPlanStep";
 
 const meta: Meta<typeof FinishingUpStep> = {
   component: FinishingUpStep,
@@ -33,12 +34,15 @@ const meta: Meta<typeof FinishingUpStep> = {
           yearlyPrice: 10,
         },
       ],
-      plan: {
-        id: 0,
-        monthlyPrice: 9,
-        title: "arcade",
-        yearlyPrice: 90,
-        discountLabel: "2 months free",
+      yourPlan: {
+        plan: {
+          id: 0,
+          monthlyPrice: 9,
+          title: "arcade",
+          yearlyPrice: 90,
+          discountLabel: "2 months free",
+        },
+        interval: "monthly",
       },
     },
   },
@@ -47,14 +51,6 @@ export default meta;
 
 type Story = StoryObj<typeof FinishingUpStep>;
 
-export const Monthly: Story = {
-  args: {
-    interval: "monthly",
-  },
-};
-
-export const Yearly: Story = {
-  args: {
-    interval: "yearly",
-  },
+export const Basic: Story = {
+  args: {},
 };

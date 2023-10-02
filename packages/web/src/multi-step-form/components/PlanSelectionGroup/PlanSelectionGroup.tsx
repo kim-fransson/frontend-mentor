@@ -66,9 +66,7 @@ export const PlanSelectionGroup = (props: PlanSelectionGroupProps) => {
           price={
             props.interval === "monthly" ? plan.monthlyPrice : plan.yearlyPrice
           }
-          discountLabel={
-            props.interval === "yearly" ? plan.discountLabel : undefined
-          }
+          discountLabel={plan.discountLabel}
         />
       ))}
     </div>

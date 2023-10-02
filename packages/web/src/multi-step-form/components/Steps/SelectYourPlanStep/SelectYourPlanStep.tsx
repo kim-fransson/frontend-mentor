@@ -31,7 +31,7 @@ export const SelectYourPlanStep = (props: SelectYourPlanStepProps) => {
       title="Select your plan"
       description="You have the option of monthly or yearly billing"
     >
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 md:gap-8">
         <PlanSelectionGroup
           selectedPlan={yourPlan.plan}
           interval={yourPlan.interval}

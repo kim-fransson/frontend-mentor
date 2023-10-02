@@ -29,7 +29,7 @@ export const PlanSelection = (props: PlanSelectionProps) => {
       ref={ref}
       className={twMerge(
         "transition-all duration-300 border w-full outline-none border-gray-200 rounded-lg p-4 select-none hover:bg-indigo-50",
-        "grid grid-cols-[auto_auto_minmax(0,_1fr)] gap-x-4",
+        "grid grid-cols-[auto_minmax(0,_1fr)] gap-x-4",
         "md:grid-cols-1",
         state.isSelected && "border-indigo-700 bg-indigo-50",
         isFocusVisible && "border-indigo-700"
@@ -42,11 +42,14 @@ export const PlanSelection = (props: PlanSelectionProps) => {
       <span className="text-gray-400 text-sm col-start-2 justify-self-start -mt-5 md:-mt-0 md:col-start-1">
         ${price}/{interval === "monthly" ? "mo" : "yr"}
       </span>
-      {discountLabel && (
-        <span className="text-xs text-sky-900 font-medium col-start-3 row-span-full ml-auto -mt-1 self-start md:mt-0 md:col-start-3">
-          {discountLabel}
-        </span>
-      )}
+      <span
+        className={twMerge(
+          "opacity-0 text-xs text-start text-indigo-400 font-medium col-start-2 mt-1 self-start md:col-start-1",
+          interval === "yearly" && "opacity-100"
+        )}
+      >
+        {discountLabel}
+      </span>
     </button>
   );
 };

@@ -11,6 +11,7 @@ interface StepCardProps extends PropsWithChildren {
   onNextDisabled?: boolean;
   onNextButtonLabel?: string;
   onNextButtonVariant?: ButtonVariant;
+  className?: string;
 }
 
 export const StepCard = (props: StepCardProps) => {
@@ -24,12 +25,15 @@ export const StepCard = (props: StepCardProps) => {
     onNextButtonLabel = "Next Step",
     onNextButtonVariant = "primary",
     children,
+    className,
   } = props;
 
   return (
     <div
       className={twMerge(
-        "bg-white shadow-lg rounded-xl px-6 pt-7 pb-10 flex flex-col"
+        "bg-white shadow-lg rounded-xl px-6 pt-7 pb-10 flex flex-col",
+        "md:shadow-none md:w-full md:rounded-none md:p-4",
+        className
       )}
     >
       {props.title && (
@@ -45,7 +49,7 @@ export const StepCard = (props: StepCardProps) => {
         <div
           className={twMerge(
             "flex items-center bg-white fixed bottom-0 left-0 right-0 px-4 py-4",
-            "md:static md:p-0 md:pt-32"
+            "md:static md:p-0 md:mt-auto"
           )}
         >
           {onNext && (
