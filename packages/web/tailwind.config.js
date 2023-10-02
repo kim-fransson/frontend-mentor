@@ -10,6 +10,7 @@ export default {
         "roboto-flex": ["Roboto Flex Variable", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
         ubuntu: ["Ubuntu", "sans-serif"],
+        inter: ["Inter Variable", "sans-serif"],
       },
       colors: {
         tomato: {

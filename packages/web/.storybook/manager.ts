@@ -8,6 +8,7 @@ addons.setConfig({
       "newsletter-signup",
       "age-calculator",
       "multi-step-form",
+      "news-homepage",
     ],
   },
 });
