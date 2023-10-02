@@ -39,10 +39,13 @@ const plans = [
 export interface PlanSelectionGroupProps {
   onChange?: (plan?: Plan) => void;
   interval: "monthly" | "yearly";
+  selectedPlan?: Plan;
 }
 
 export const PlanSelectionGroup = (props: PlanSelectionGroupProps) => {
-  const [selectedPlan, setSelectedPlan] = useState<Plan | undefined>();
+  const [selectedPlan, setSelectedPlan] = useState<Plan | undefined>(
+    props.selectedPlan
+  );
   const { onChange } = props;
 
   const handleSelectionChange = (selected: boolean, plan: Plan) => {

@@ -7,22 +7,27 @@ import { StepCard } from "../StepCard/StepCard";
 
 interface PickAddonsStepProps {
   onNext: (selectedAddOns: AddOn[]) => void;
-  onBack: () => void;
+  onBack: (selectedAddOns: AddOn[]) => void;
   interval: "monthly" | "yearly";
+  data?: AddOn[];
 }
 
 export const PickAddonsStep = (props: PickAddonsStepProps) => {
-  const { interval, onBack, onNext } = props;
-  const [selectedAddOns, setSelectedAddOns] = useState<AddOn[]>([]);
+  const { interval, onBack, onNext, data } = props;
+  const [selectedAddOns, setSelectedAddOns] = useState<AddOn[]>(data || []);
   return (
     <StepCard
       title="Pick add-ons"
       description="Add-ons help enhance your gaming experience"
       onNextDisabled={false}
-      onBack={onBack}
+      onBack={() => onBack(selectedAddOns)}
       onNext={() => onNext(selectedAddOns)}
     >
-      <AddOnSelectionGroup interval={interval} onChange={setSelectedAddOns} />
+      <AddOnSelectionGroup
+        selectedAddons={data}
+        interval={interval}
+        onChange={setSelectedAddOns}
+      />
     </StepCard>
   );
 };

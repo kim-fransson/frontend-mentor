@@ -13,29 +13,32 @@ export interface YourPlan {
 
 interface SelectYourPlanStepProps {
   onNext: (yourPlan: YourPlan) => void;
-  onBack: () => void;
+  onBack: (yourPlan: YourPlan) => void;
+  data?: YourPlan;
 }
 
 export const SelectYourPlanStep = (props: SelectYourPlanStepProps) => {
-  const { onNext, onBack } = props;
+  const { onNext, onBack, data } = props;
   const [yourPlan, setYourPlan] = useState<YourPlan>({
-    plan: undefined,
-    interval: "monthly",
+    plan: data?.plan,
+    interval: data?.interval || "monthly",
   });
   return (
     <StepCard
       onNext={() => onNext(yourPlan)}
-      onBack={onBack}
+      onBack={() => onBack(yourPlan)}
       onNextDisabled={!yourPlan.plan}
       title="Select your plan"
       description="You have the option of monthly or yearly billing"
     >
       <div className="flex flex-col gap-4">
         <PlanSelectionGroup
+          selectedPlan={yourPlan.plan}
           interval={yourPlan.interval}
           onChange={(plan) => setYourPlan((curr) => ({ ...curr, plan }))}
         />
         <IntervalSwitch
+          activeInterval={yourPlan.interval}
           onChange={(interval) =>
             setYourPlan((curr) => ({ ...curr, interval }))
           }

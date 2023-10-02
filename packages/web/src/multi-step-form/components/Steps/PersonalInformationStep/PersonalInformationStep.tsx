@@ -5,7 +5,6 @@ import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import isEmail from "validator/lib/isEmail";
 import isMobilePhone from "validator/lib/isMobilePhone";
-import { classNames } from "classnames";
 
 const schema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -20,10 +19,11 @@ const schema = z.object({
       message: "Invalid phone number",
     }),
 });
-type FormData = z.infer<typeof schema>;
+export type UserData = z.infer<typeof schema>;
 
 interface PersonalInformationStepProps {
-  onNext: (value: FormData) => void;
+  onNext: (value: UserData) => void;
+  data?: UserData;
 }
 
 const inputs = [
@@ -43,23 +43,23 @@ const inputs = [
 export const PersonalInformationStep = (
   props: PersonalInformationStepProps
 ) => {
-  const { onNext } = props;
+  const { onNext, data } = props;
 
   const {
     control,
     handleSubmit,
     formState: { isValid },
-  } = useForm<FormData>({
+  } = useForm<UserData>({
     mode: "all",
     resolver: zodResolver(schema),
     defaultValues: {
-      name: "",
-      email: "",
-      phoneNumber: "",
+      name: data?.name || "",
+      email: data?.email || "",
+      phoneNumber: data?.phoneNumber || "",
     },
   });
 
-  const handleOnNext = (value: FormData) => {
+  const handleOnNext = (value: UserData) => {
     onNext(value);
   };
 

@@ -28,7 +28,7 @@ export const AddOnSelection = (props: AddOnSelectionProps) => {
       {...mergeProps(buttonProps, focusProps)}
       className={twMerge(
         "hover:bg-indigo-50 border cursor-pointer select-none outline-none border-gray-200 duration-300 transition-all rounded-lg p-4",
-        "flex items-center gap-6",
+        "flex items-center",
         state.isSelected && "border-indigo-700 bg-indigo-50",
         isFocusVisible && "border-indigo-700"
       )}
@@ -39,12 +39,12 @@ export const AddOnSelection = (props: AddOnSelectionProps) => {
         isDisabled
       />
 
-      <div className="flex items-baseline flex-col gap-1">
+      <div className="ml-4 flex items-baseline flex-col gap-1">
         <h2 className="font-bold text-sm text-sky-800">{title}</h2>
         <p className="text-xs text-gray-400 font-medium">{description}</p>
       </div>
 
-      <span className="ml-auto tracking-wide text-indigo-700 text-sm">
+      <span className="ml-auto text-indigo-400 font-medium text-xs">
         +${price}/{interval === "monthly" ? "mo" : "yr"}
       </span>
     </button>

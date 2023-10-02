@@ -1,11 +1,13 @@
 import { AddOn } from "../../AddOnSelectionGroup/AddOnSelectionGroup/AddOnSelectionGroup";
 import { Button } from "../../Button/Button";
+import { UserData } from "../PersonalInformationStep/PersonalInformationStep";
 import { YourPlan } from "../SelectYourPlanStep/SelectYourPlanStep";
 import { StepCard } from "../StepCard/StepCard";
 
 export interface Selections {
   addons?: AddOn[];
   yourPlan?: YourPlan;
+  userData?: UserData;
 }
 
 interface FinishingStepProps {

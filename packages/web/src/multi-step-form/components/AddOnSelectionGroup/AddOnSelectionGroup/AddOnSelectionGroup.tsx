@@ -36,10 +36,13 @@ const addOns = [
 interface AddOnSelectionGroupProps {
   onChange?: (addOns: AddOn[]) => void;
   interval: "monthly" | "yearly";
+  selectedAddons?: AddOn[];
 }
 
 export const AddOnSelectionGroup = (props: AddOnSelectionGroupProps) => {
-  const [selectedAddOns, setSelectedAddOns] = useState<AddOn[]>([]);
+  const [selectedAddOns, setSelectedAddOns] = useState<AddOn[]>(
+    props.selectedAddons || []
+  );
   const { onChange, interval } = props;
 
   const handleAddOnChange = (selected: boolean, addOn: AddOn) => {

@@ -6,14 +6,17 @@ type Interval = "monthly" | "yearly";
 
 export interface IntervalSwitchProps {
   onChange?: (interval: Interval) => void;
+  activeInterval: Interval;
 }
 
 export const IntervalSwitch = (props: IntervalSwitchProps) => {
-  const [activeInterval, setActiveInterval] = useState<Interval>("monthly");
+  const [activeInterval, setActiveInterval] = useState<Interval>(
+    props.activeInterval
+  );
   const { onChange } = props;
 
   return (
-    <div className="flex gap-6 items-center justify-center p-3 rounded-lg bg-indigo-50">
+    <div className="select-none flex gap-6 items-center justify-center p-3 rounded-lg bg-indigo-50">
       <span
         className={twMerge(
           "font-medium text-gray-400 transition-all duration-150",
@@ -23,6 +26,7 @@ export const IntervalSwitch = (props: IntervalSwitchProps) => {
         Monthly
       </span>
       <Switch
+        isSelected={activeInterval === "yearly"}
         onChange={(selected) => {
           setActiveInterval(selected ? "yearly" : "monthly");
           onChange && onChange(selected ? "yearly" : "monthly");

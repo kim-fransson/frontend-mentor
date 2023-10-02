@@ -9,11 +9,9 @@ import {
 } from "./components/Steps/FinishingUpStep/FinishingUpStep";
 import { ConfirmationStep } from "./components/Steps/ConfirmationStep/ConfirmationStep";
 
-interface MultiStepFormProps {}
-
 const steps = ["your info", "select plan", "add-ons", "summary"];
 
-export const MultiStepForm = (props: MultiStepFormProps) => {
+export const MultiStepForm = () => {
   const [activeStep, setActiveStep] = useState(1);
   const [selections, setSelections] = useState<Selections>();
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -21,11 +19,23 @@ export const MultiStepForm = (props: MultiStepFormProps) => {
   const renderStep = (step: number) => {
     switch (step) {
       case 1:
-        return <PersonalInformationStep onNext={() => setActiveStep(2)} />;
+        return (
+          <PersonalInformationStep
+            data={selections?.userData}
+            onNext={(userData) => {
+              setSelections((curr) => ({ ...curr, userData }));
+              setActiveStep(2);
+            }}
+          />
+        );
       case 2:
         return (
           <SelectYourPlanStep
-            onBack={() => setActiveStep(1)}
+            data={selections?.yourPlan}
+            onBack={(yourPlan) => {
+              setSelections((curr) => ({ ...curr, yourPlan }));
+              setActiveStep(1);
+            }}
             onNext={(yourPlan) => {
               setSelections((curr) => ({ ...curr, yourPlan }));
               setActiveStep(3);
@@ -35,8 +45,12 @@ export const MultiStepForm = (props: MultiStepFormProps) => {
       case 3:
         return (
           <PickAddonsStep
+            data={selections!.addons}
             interval={selections!.yourPlan!.interval}
-            onBack={() => setActiveStep(2)}
+            onBack={(addons) => {
+              setSelections((curr) => ({ ...curr, addons }));
+              setActiveStep(2);
+            }}
             onNext={(addons) => {
               setSelections((curr) => ({ ...curr, addons }));
               setActiveStep(4);
