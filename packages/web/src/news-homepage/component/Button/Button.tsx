@@ -24,9 +24,9 @@ export const Button = (props: ButtonProps) => {
         "transition-all duration-150 outline-none select-none cursor-pointer",
         "bg-red-500",
         "px-8 py-[0.75rem]",
-        "uppercase tracking-[0.3em] text-base font-bold font-inter text-white",
-        isPressed && "scale-95 bg-gray-950",
-        isFocusVisible && "border-4 border-gray-950",
+        "uppercase tracking-[0.3em] text-base font-bold text-white",
+        isPressed && "scale-95 bg-slate-950",
+        isFocusVisible && "border-4 border-slate-950",
         className
       )}
     >
