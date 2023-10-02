@@ -11,7 +11,7 @@ const confettiSettings = {
 
 export const ConfirmationStep = () => {
   return (
-    <StepCard className="relative">
+    <StepCard animate={false} className="relative md:justify-start">
       <ConfettiExplosion {...confettiSettings} />
       <ConfettiExplosion {...confettiSettings} className="absolute right-0" />
       <div className="flex flex-col items-center justify-center py-10">
