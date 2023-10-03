@@ -21,12 +21,13 @@ export const Button = (props: ButtonProps) => {
     <button
       {...mergeProps(focusProps, buttonProps)}
       className={twMerge(
-        "transition-all duration-150 outline-none select-none cursor-pointer",
-        "bg-red-500",
-        "px-8 py-[0.75rem]",
-        "uppercase tracking-[0.3em] text-base font-bold text-white",
+        "border-4 border-transparent transition-all duration-150 outline-none select-none cursor-pointer",
+        "bg-[#ef4335]",
+        "px-5 py-2",
+        "uppercase tracking-[0.3em] text-xs font-bold text-white",
         isPressed && "scale-95 bg-slate-950",
         isFocusVisible && "border-4 border-slate-950",
+        "hover:border-slate-950",
         className
       )}
     >
