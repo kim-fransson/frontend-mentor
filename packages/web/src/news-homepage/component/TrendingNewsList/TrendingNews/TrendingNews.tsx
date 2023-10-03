@@ -11,8 +11,8 @@ export const TrendingNews = ({
   position,
 }: TrendingNewsProps) => {
   return (
-    <li className="list-none flex gap-6">
-      <img className="rounded-sm" src={image} />
+    <li className="list-none grid grid-cols-[75px_auto] gap-4">
+      <img className="rounded-sm self-stretch" src={image as string} />
       <div className="flex flex-col justify-between">
         <span className="text-3xl leading-none font-extrabold text-gray-300">
           {position < 10 ? "0" + position : position}
