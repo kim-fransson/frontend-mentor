@@ -5,7 +5,9 @@ import { useState } from "react";
 import { useClickAway } from "@uidotdev/usehooks";
 import { Transition } from "@headlessui/react";
 
-interface NavigationProps {}
+interface NavigationProps {
+  className?: string;
+}
 interface MenuProps {
   show: boolean;
   onClose: () => void;
@@ -21,7 +23,7 @@ const Menu = (props: MenuProps) => {
   return (
     <Transition appear={show} show={show}>
       <Transition.Child
-        className="absolute inset-0 bg-black duration-300 z-30"
+        className="fixed inset-0 bg-black duration-300 z-30"
         enter="ease-in"
         enterFrom="opacity-0"
         enterTo="opacity-50"
@@ -30,7 +32,7 @@ const Menu = (props: MenuProps) => {
         leaveTo="opacity-0"
       />
       <Transition.Child
-        className="p-4 gap-4 flex flex-col bg-white fixed top-0 right-0 z-40 w-2/3 h-full transition"
+        className="backdrop-blur-xl bg-white/80 p-4 gap-4 flex flex-col fixed top-0 right-0 z-40 w-2/3 h-full transition"
         enter="ease-in-out duration-300"
         enterFrom="translate-x-full opacity-0"
         enterTo="translate-x-0 opacity-100"
@@ -62,7 +64,7 @@ const Menu = (props: MenuProps) => {
 export const Navigation = (props: NavigationProps) => {
   const [showMenu, setShowMenu] = useState(false);
   return (
-    <>
+    <div className={props.className}>
       <Menu show={showMenu} onClose={() => setShowMenu(false)} />
       <nav className="p-4 flex justify-end items-center gap-8">
         <Logo className="mr-auto" />
@@ -78,6 +80,6 @@ export const Navigation = (props: NavigationProps) => {
           <MenuIcon />
         </button>
       </nav>
-    </>
+    </div>
   );
 };

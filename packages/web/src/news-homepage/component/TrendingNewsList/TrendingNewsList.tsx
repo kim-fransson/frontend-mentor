@@ -43,7 +43,11 @@ export const TrendingNewsList = ({ className }: TrendingNewsProps) => {
   return (
     <ol className={twMerge("grid grid-cols-1 gap-8 lg:grid-cols-3", className)}>
       {trendingNewsList.sort(compare).map((trending, index) => (
-        <TrendingNews position={++index} trendingNews={trending} />
+        <TrendingNews
+          key={trending.title}
+          position={++index}
+          trendingNews={trending}
+        />
       ))}
     </ol>
   );

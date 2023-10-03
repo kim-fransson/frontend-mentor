@@ -26,15 +26,17 @@ const newsList = [
 export const NewsList = ({ title, className }: NewsListProps) => {
   return (
     <div className={twMerge("bg-slate-950 p-6", className)}>
-      <h2 className="text-orange-300 text-3xl font-extrabold mb-6">{title}</h2>
+      <h2 className="text-orange-300 text-3xl lg:text-4xl font-extrabold mb-6">
+        {title}
+      </h2>
       <ul>
         {newsList.map((news, index) => (
-          <>
+          <span key={news.title}>
             <News key={news.title} news={news} />
             {index !== newsList.length - 1 && (
               <hr className="border-gray-500 my-6" />
             )}
-          </>
+          </span>
         ))}
       </ul>
     </div>

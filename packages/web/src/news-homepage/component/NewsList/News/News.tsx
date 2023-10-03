@@ -8,7 +8,7 @@ interface NewsProps {
 export const News = (props: NewsProps) => {
   const { title, description } = props.news;
   return (
-    <li className="list-none flex flex-col gap-1">
+    <li key={title} className="list-none flex flex-col gap-1">
       <a
         className={twMerge(
           "cursor-pointer select-none font-extrabold tracking-tight text-lg text-white",
