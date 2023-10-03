@@ -32,7 +32,7 @@ const Menu = (props: MenuProps) => {
         leaveTo="opacity-0"
       />
       <Transition.Child
-        className="backdrop-blur-xl bg-white/80 p-4 gap-4 flex flex-col fixed top-0 right-0 z-40 w-2/3 h-full transition"
+        className="backdrop-blur-lg bg-white/90 p-4 gap-4 flex flex-col fixed top-0 right-0 z-40 w-2/3 h-full transition"
         enter="ease-in-out duration-300"
         enterFrom="translate-x-full opacity-0"
         enterTo="translate-x-0 opacity-100"
