@@ -9,7 +9,10 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "generators": "hygen",
+    "new:challenge": "hygen new challenge",
+    "new:component": "hygen new component"
   },
   "dependencies": {
     "@fontsource-variable/hanken-grotesk": "5.0.13",
