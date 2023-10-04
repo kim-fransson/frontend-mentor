@@ -16,7 +16,7 @@ const plans = [
     discountLabel: "2 months free",
     monthlyPrice: 9,
     yearlyPrice: 90,
-    icon: "/svg/icon-arcade.svg",
+    icon: "/images/multi-step-form/icon-arcade.svg",
   },
   {
     id: 1,
@@ -24,7 +24,7 @@ const plans = [
     discountLabel: "2 months free",
     monthlyPrice: 12,
     yearlyPrice: 120,
-    icon: "/svg/icon-advanced.svg",
+    icon: "/images/multi-step-form/icon-advanced.svg",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const plans = [
     discountLabel: "2 months free",
     monthlyPrice: 15,
     yearlyPrice: 150,
-    icon: "/svg/icon-pro.svg",
+    icon: "/images/multi-step-form/icon-pro.svg",
   },
 ];
 

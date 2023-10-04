@@ -12,11 +12,11 @@ export const Sidebar = (props: SidebarProps) => {
       <picture className="w-full h-auto">
         <source
           media="(min-width:768px)"
-          srcSet="/images/bg-sidebar-desktop.svg"
+          srcSet="/images/multi-step-form/bg-sidebar-desktop.svg"
         />
         <img
           className="w-full"
-          src="/images/bg-sidebar-mobile.svg"
+          src="/images/multi-step-form/bg-sidebar-mobile.svg"
           alt="illustration sidebar"
         />
       </picture>

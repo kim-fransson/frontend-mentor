@@ -24,11 +24,11 @@ export const NewsletterSignup = (props: NewsletterSignupProps) => {
       <picture className="-mx-6 md:mx-0 md:order-2 md:h-auto md:max-w-full">
         <source
           media="(min-width:28rem)"
-          srcSet="/images/illustration-sign-up-desktop.svg"
+          srcSet="/images/newsletter-signup/illustration-sign-up-desktop.svg"
         />
         <img
           className="w-full"
-          src="/images/illustration-sign-up-mobile.svg"
+          src="/images/newsletter-signup/illustration-sign-up-mobile.svg"
           alt="illustration sign-up"
         />
       </picture>

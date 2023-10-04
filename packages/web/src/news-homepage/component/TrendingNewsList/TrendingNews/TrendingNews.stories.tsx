@@ -11,7 +11,7 @@ const meta: Meta<typeof TrendingNews> = {
       title: "Reviving Retro PCs",
       description: "What happens when old PCs are given modern upgrades?",
       trendingScore: 354,
-      image: "/images/image-retro-pcs.jpg",
+      image: "/images/news-homepage/image-retro-pcs.jpg",
     },
     position: 1,
   },
