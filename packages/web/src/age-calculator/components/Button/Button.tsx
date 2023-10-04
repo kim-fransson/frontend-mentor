@@ -6,7 +6,7 @@ import {
   useFocusRing,
 } from "react-aria";
 import { twMerge } from "tailwind-merge";
-import ArrowIcon from "../../../assets/svg/icon-arrow.svg?react";
+import ArrowIcon from "../../assets/icon-arrow.svg?react";
 
 interface ButtonProps extends AriaButtonProps {
   className: string;

@@ -1,5 +1,5 @@
 import { StepCard } from "../StepCard/StepCard";
-import ThankYou from "../../../../assets/svg/icon-thank-you.svg?react";
+import ThankYou from "../../../assets/icon-thank-you.svg?react";
 import ConfettiExplosion from "react-confetti-explosion";
 
 const confettiSettings = {

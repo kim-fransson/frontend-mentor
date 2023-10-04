@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Summary } from "./Summary";
 
-import ReactionIcon from "../../../assets/svg/icon-reaction.svg?react";
-import MemoryIcon from "../../../assets/svg/icon-memory.svg?react";
-import VerbalIcon from "../../../assets/svg/icon-verbal.svg?react";
-import VisualIcon from "../../../assets/svg/icon-visual.svg?react";
+import ReactionIcon from "../../assets/svg/icon-reaction.svg?react";
+import MemoryIcon from "../../assets/svg/icon-memory.svg?react";
+import VerbalIcon from "../../assets/svg/icon-verbal.svg?react";
+import VisualIcon from "../../assets/svg/icon-visual.svg?react";
 
 const meta: Meta<typeof Summary> = {
   component: Summary,

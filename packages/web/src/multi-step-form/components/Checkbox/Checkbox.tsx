@@ -8,7 +8,7 @@ import {
 import { useToggleState } from "react-stately";
 import { twMerge } from "tailwind-merge";
 
-import CheckmarkIcon from "../../../assets/svg/icon-checkmark.svg?react";
+import CheckmarkIcon from "../../assets/icon-checkmark.svg?react";
 
 interface CheckboxProps extends AriaCheckboxProps {}
 

@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import ListIcon from "../assets/svg/icon-list.svg?react";
+import ListIcon from "./assets/icon-list.svg?react";
 import { EmailForm } from "./components/EmailForm/EmailForm";
 
 export interface NewsletterSignupProps {

@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import SuccessIcon from "../../../assets/svg/icon-success.svg?react";
+import SuccessIcon from "../../assets/icon-success.svg?react";
 import { Button } from "../Button/Button";
 
 interface SignupSuccessProps {

@@ -1,6 +1,6 @@
-import Logo from "../../../assets/svg/logo.svg?react";
-import MenuIcon from "../../../assets/svg/icon-menu.svg?react";
-import MenuClose from "../../../assets/svg/icon-menu-close.svg?react";
+import Logo from "../../assets/logo.svg?react";
+import MenuIcon from "../../assets/icon-menu.svg?react";
+import MenuClose from "../../assets/icon-menu-close.svg?react";
 import { useState } from "react";
 import { useClickAway } from "@uidotdev/usehooks";
 import { Transition } from "@headlessui/react";
