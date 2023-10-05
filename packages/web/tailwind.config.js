@@ -11,6 +11,7 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         ubuntu: ["Ubuntu", "sans-serif"],
         inter: ["Inter Variable", "sans-serif"],
+        "plus-jakarta-sans": ["Plus Jakarta Sans Variable", "sans-serif"],
       },
       colors: {
         tomato: {

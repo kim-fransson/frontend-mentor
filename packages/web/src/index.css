@@ -12,6 +12,8 @@
 
 @import "@fontsource-variable/inter";
 
+@import "@fontsource-variable/plus-jakarta-sans";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
