@@ -50,7 +50,7 @@ export const notifications: Notification[] = [
   },
   {
     actor: {
-      img: "/images/notifications-page/avatar-kimberly-smith",
+      img: "/images/notifications-page/avatar-kimberly-smith.webp",
       name: "Kimberly Smith",
     },
     type: "picture-comment",

@@ -14,15 +14,17 @@ interface Group {
 interface Picture {
   thumbnail: string;
 }
+
+type NotificationType =
+  | "post-reaction"
+  | "new-follower"
+  | "joined-group"
+  | "private-message"
+  | "picture-comment"
+  | "left-group";
 interface BaseNotification {
   actor: Actor;
-  type:
-    | "post-reaction"
-    | "new-follower"
-    | "joined-group"
-    | "private-message"
-    | "picture-comment"
-    | "left-group";
+  type: NotificationType;
   timestamp: Date;
   hasRead: boolean;
 }

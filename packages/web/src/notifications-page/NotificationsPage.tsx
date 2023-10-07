@@ -2,6 +2,7 @@ import { useMemo, useRef } from "react";
 import { notifications } from "./notifications";
 import { twMerge } from "tailwind-merge";
 import { AriaButtonProps, mergeProps, useButton } from "react-aria";
+import { Notification } from "./components/Notification/Notification";
 
 export interface NotificationsPageProps {}
 
@@ -24,16 +25,19 @@ const Button = (props: AriaButtonProps) => {
   );
 };
 
-export const NotificationsPage = (props: NotificationsPageProps) => {
+export const NotificationsPage = () => {
   const memoizedNotifications = useMemo(() => notifications, []);
 
   const unreadNotifications = memoizedNotifications.filter(
     (notification) => !notification.hasRead
   );
 
-  console.log(memoizedNotifications);
   return (
-    <div className={twMerge("p-4 font-plus-jakarta-sans")}>
+    <div
+      className={twMerge(
+        "p-4 font-plus-jakarta-sans max-w-xl bg-white rounded-md"
+      )}
+    >
       <div className="flex gap-2 items-center mb-4">
         <h2 className="font-extrabold text-xl text-gray-900">Notifications</h2>
         <span
@@ -45,7 +49,14 @@ export const NotificationsPage = (props: NotificationsPageProps) => {
         </span>
         <Button>Mark all as read</Button>
       </div>
-      <ol>Notifications...</ol>
+      <ol className="flex flex-col gap-2">
+        {memoizedNotifications.map((notification, index) => (
+          <Notification
+            key={`${notification.type}-${index}`}
+            notification={notification}
+          />
+        ))}
+      </ol>
     </div>
   );
 };

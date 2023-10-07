@@ -4,7 +4,7 @@ import { NotificationsPage } from "./NotificationsPage";
 const meta: Meta<typeof NotificationsPage> = {
   component: NotificationsPage,
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
     backgrounds: {
       default: "frontend-mentor",
       values: [{ name: "frontend-mentor", value: "#f0f0f0" }],
