@@ -50,11 +50,8 @@ export const NotificationsPage = () => {
         <Button>Mark all as read</Button>
       </div>
       <ol className="flex flex-col gap-2">
-        {memoizedNotifications.map((notification, index) => (
-          <Notification
-            key={`${notification.type}-${index}`}
-            notification={notification}
-          />
+        {memoizedNotifications.map((notification) => (
+          <Notification key={notification.id} notification={notification} />
         ))}
       </ol>
     </div>

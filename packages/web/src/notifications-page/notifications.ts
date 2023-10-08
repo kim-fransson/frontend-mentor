@@ -9,6 +9,7 @@ const generateTimeToMathDiff = (diffInSeconds: number): Date => {
 
 export const notifications: Notification[] = [
   {
+    id: 1,
     actor: {
       img: "/images/notifications-page/avatar-mark-webber.webp",
       name: "Mark Webber",
@@ -19,6 +20,7 @@ export const notifications: Notification[] = [
     hasRead: false,
   },
   {
+    id: 2,
     actor: {
       img: "/images/notifications-page/avatar-angela-gray.webp",
       name: "Angela Gray",
@@ -28,6 +30,7 @@ export const notifications: Notification[] = [
     hasRead: false,
   },
   {
+    id: 3,
     actor: {
       img: "/images/notifications-page/avatar-jacob-thompson.webp",
       name: "Jacob Thompson",
@@ -38,6 +41,7 @@ export const notifications: Notification[] = [
     hasRead: false,
   },
   {
+    id: 4,
     actor: {
       img: "/images/notifications-page/avatar-rizky-hasanuddin.webp",
       name: "Rizky Hasanuddin",
@@ -49,6 +53,7 @@ export const notifications: Notification[] = [
     hasRead: true,
   },
   {
+    id: 5,
     actor: {
       img: "/images/notifications-page/avatar-kimberly-smith.webp",
       name: "Kimberly Smith",
@@ -59,6 +64,7 @@ export const notifications: Notification[] = [
     hasRead: true,
   },
   {
+    id: 6,
     actor: {
       img: "/images/notifications-page/avatar-nathan-peterson.webp",
       name: "Nathan Peterson",
@@ -69,6 +75,7 @@ export const notifications: Notification[] = [
     hasRead: true,
   },
   {
+    id: 7,
     actor: {
       img: "/images/notifications-page/avatar-anna-kim.webp",
       name: "Anna Kim",

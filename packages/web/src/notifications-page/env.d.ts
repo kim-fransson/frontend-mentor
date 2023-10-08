@@ -23,6 +23,7 @@ type NotificationType =
   | "picture-comment"
   | "left-group";
 interface BaseNotification {
+  id: number;
   actor: Actor;
   type: NotificationType;
   timestamp: Date;
