@@ -15,9 +15,20 @@ const calcDiffFromNow = (birthDate: Date) => {
 
   let years = now.getFullYear() - birthDate.getFullYear();
   let months = now.getMonth() - birthDate.getMonth();
-  const days = now.getDate() - birthDate.getDate();
+  let days = now.getDate() - birthDate.getDate();
 
-  if (months < 0 || (months === 0 && days < 0)) {
+  if (days < 0) {
+    const lastMonth = new Date(
+      now.getFullYear(),
+      now.getMonth() - 1,
+      birthDate.getDate()
+    );
+    const timeDifference = now.getTime() - lastMonth.getTime();
+    days = Math.floor(timeDifference / (1000 * 3600 * 24));
+    months--;
+  }
+
+  if (months < 0) {
     years--;
     months += 12;
   }
