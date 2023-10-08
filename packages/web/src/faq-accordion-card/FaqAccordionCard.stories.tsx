@@ -4,7 +4,7 @@ import { FaqAccordionCard } from "./FaqAccordionCard";
 const meta: Meta<typeof FaqAccordionCard> = {
   component: FaqAccordionCard,
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
     backgrounds: {
       default: "frontend-mentor",
       values: [

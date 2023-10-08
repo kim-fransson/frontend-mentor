@@ -24,6 +24,7 @@
     "@fontsource/poppins": "5.0.8",
     "@fontsource/ubuntu": "5.0.8",
     "@headlessui/react": "1.7.17",
+    "@headlessui/tailwindcss": "0.2.0",
     "@hookform/resolvers": "3.3.1",
     "@uidotdev/usehooks": "2.3.1",
     "classnames": "2.3.2",

@@ -1,4 +1,5 @@
 import tailwindcssAnimate from "tailwindcss-animate";
+import headlessui from "@headlessui/tailwindcss";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -29,5 +30,5 @@ export default {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, headlessui],
 };
