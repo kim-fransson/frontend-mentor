@@ -12,6 +12,7 @@ export default {
         ubuntu: ["Ubuntu", "sans-serif"],
         inter: ["Inter Variable", "sans-serif"],
         "plus-jakarta-sans": ["Plus Jakarta Sans Variable", "sans-serif"],
+        "kumbh-sans": ["Kumbh Sans Variable", "sans-serif"],
       },
       colors: {
         tomato: {
