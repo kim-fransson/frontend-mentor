@@ -1,4 +1,6 @@
+import { twMerge } from "tailwind-merge";
 import { Disclosure } from "./components/Disclosure/Disclosure";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 export interface FaqAccordionCardProps {}
 
@@ -30,34 +32,79 @@ const faqMap = new Map([
 ]);
 
 export const FaqAccordionCard = () => {
+  const isLargeDevice = useMediaQuery("only screen and (min-width : 1024px)");
   return (
-    <div className="pb-10 pt-36 px-6 font-kumbh-sans rounded-3xl bg-white shadow-2xl">
-      <img
-        className="w-64 absolute top-11 left-1/2 -translate-x-1/2"
-        src="/images/faq-accordion-card/illustration-woman-online-mobile.svg"
-        alt="illustration woman online"
-      />
-      <img
-        className="h-auto w-64 absolute top-40 left-1/2 -translate-x-1/2"
-        src="/images/faq-accordion-card/bg-pattern-mobile.svg"
-        alt="shadow from illustration"
-      />
-      <h2 className="mb-8 text-center text-4xl font-bold text-gray-800 uppercase">
-        faq
-      </h2>
-      <ul className="flex flex-col">
-        {Array.from(faqMap.keys()).map((question, index) => (
+    <div className="relative">
+      {isLargeDevice && (
+        <img
+          className={twMerge(
+            "absolute -left-[6rem] top-[13.5rem] z-30",
+            "animate-bounce animate-infinite animate-duration-[3500ms] animate-ease-in"
+          )}
+          src="/images/faq-accordion-card/illustration-box-desktop.svg"
+          alt="floating box"
+        />
+      )}
+      <div
+        className={twMerge(
+          "pb-10 pt-36 px-6 font-kumbh-sans rounded-3xl bg-white shadow-2xl",
+          "max-w-4xl lg:grid lg:grid-cols-2 lg:items-start lg:p-20 lg:overflow-hidden lg:relative"
+        )}
+      >
+        {!isLargeDevice && (
           <>
-            <Disclosure
-              question={question}
-              answer={faqMap.get(question) as string}
+            <img
+              className="w-64 absolute -top-28 left-1/2 -translate-x-1/2"
+              src="/images/faq-accordion-card/illustration-woman-online-mobile.svg"
+              alt="illustration woman online"
             />
-            {index !== faqMap.keys.length - 1 && (
-              <hr className="border-gray-200 my-4" />
-            )}
+            <img
+              className="h-auto w-64 absolute top-2 left-1/2 -translate-x-1/2"
+              src="/images/faq-accordion-card/bg-pattern-mobile.svg"
+              alt="shadow from illustration"
+            />
           </>
-        ))}
-      </ul>
+        )}
+
+        {isLargeDevice && (
+          <>
+            <img
+              className="z-20 absolute top-64 -translate-y-1/2 -left-20"
+              src="/images/faq-accordion-card/illustration-woman-online-desktop.svg"
+              alt="illustration woman online"
+            />
+            <img
+              className="z-10 absolute top-44 -translate-y-1/2 -left-[36rem]"
+              src="/images/faq-accordion-card/bg-pattern-desktop.svg"
+              alt="shadow from illustration"
+            />
+          </>
+        )}
+
+        <div className="lg:col-start-2">
+          <h2
+            className={twMerge(
+              "mb-8 text-center text-4xl font-bold text-gray-800 uppercase",
+              "lg:text-left"
+            )}
+          >
+            faq
+          </h2>
+          <ul className="flex flex-col">
+            {Array.from(faqMap.keys()).map((question, index) => (
+              <>
+                <Disclosure
+                  question={question}
+                  answer={faqMap.get(question) as string}
+                />
+                {index !== faqMap.keys.length - 1 && (
+                  <hr className="border-gray-200 my-4" />
+                )}
+              </>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

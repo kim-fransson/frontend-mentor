@@ -17,7 +17,7 @@ const meta: Meta<typeof FaqAccordionCard> = {
   },
   decorators: [
     (Story) => (
-      <div className="mt-40">
+      <div className="mt-40  lg:my-10 lg:mx-20">
         <Story />
       </div>
     ),

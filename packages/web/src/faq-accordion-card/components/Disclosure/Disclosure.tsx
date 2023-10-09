@@ -13,18 +13,16 @@ export interface DisclosureProps {
 export const Disclosure = ({ question, answer }: DisclosureProps) => {
   return (
     <HeadlessDisclosure>
-      <div className="grid grid-cols-[_1fr_auto] gap-x-4 gap-y-1 w-full">
+      <div className="grid grid-cols-1 gap-y-1 w-full">
         <HeadlessDisclosure.Button
           className={twMerge(
-            "flex text-gray-500 justify-between items-center w-full",
+            "flex text-gray-500 justify-between items-center w-full border-2 border-transparent p-1 rounded-md",
             "ui-open:font-bold ui-open:text-gray-800",
-            "hover:text-orange-400 duration-300 transition-colors"
+            "hover:text-orange-400 duration-300 transition-colors",
+            "outline-none focus-visible:border-[#f47b56]"
           )}
         >
           <span className="text-left text-sm">{question}</span>
-        </HeadlessDisclosure.Button>
-
-        <HeadlessDisclosure.Button className="self-center justify-self-end">
           <Chevron className="ui-open:rotate-180 transition-all duration-200" />
         </HeadlessDisclosure.Button>
 
@@ -36,7 +34,7 @@ export const Disclosure = ({ question, answer }: DisclosureProps) => {
           leaveFrom="transform scale-100 opacity-100"
           leaveTo="transform scale-95 opacity-0"
         >
-          <HeadlessDisclosure.Panel className="text-sm text-gray-500">
+          <HeadlessDisclosure.Panel className="text-sm p-1 text-gray-500 pr-4">
             {answer}
           </HeadlessDisclosure.Panel>
         </Transition>
