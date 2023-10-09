@@ -16,12 +16,12 @@ export const Disclosure = ({ question, answer }: DisclosureProps) => {
       <div className="grid grid-cols-[_1fr_auto] gap-x-4 gap-y-1 w-full">
         <HeadlessDisclosure.Button
           className={twMerge(
-            "flex justify-between items-center w-full",
+            "flex text-gray-500 justify-between items-center w-full",
             "ui-open:font-bold ui-open:text-gray-800",
             "hover:text-orange-400 duration-300 transition-colors"
           )}
         >
-          <span>{question}</span>
+          <span className="text-left text-sm">{question}</span>
         </HeadlessDisclosure.Button>
 
         <HeadlessDisclosure.Button className="self-center justify-self-end">
@@ -29,16 +29,14 @@ export const Disclosure = ({ question, answer }: DisclosureProps) => {
         </HeadlessDisclosure.Button>
 
         <Transition
-          enter="transition duration-100 ease-out"
+          enter="transition duration-200 ease-out"
           enterFrom="transform scale-95 opacity-0"
           enterTo="transform scale-100 opacity-100"
           leave="transition duration-75 ease-out"
           leaveFrom="transform scale-100 opacity-100"
           leaveTo="transform scale-95 opacity-0"
         >
-          <HeadlessDisclosure.Panel
-            className={twMerge("text-sm text-gray-500")}
-          >
+          <HeadlessDisclosure.Panel className="text-sm text-gray-500">
             {answer}
           </HeadlessDisclosure.Panel>
         </Transition>

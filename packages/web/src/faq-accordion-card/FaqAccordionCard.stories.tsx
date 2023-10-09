@@ -4,20 +4,20 @@ import { FaqAccordionCard } from "./FaqAccordionCard";
 const meta: Meta<typeof FaqAccordionCard> = {
   component: FaqAccordionCard,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
     backgrounds: {
       default: "frontend-mentor",
       values: [
         {
           name: "frontend-mentor",
-          value: "rgba(102,98,229,1)",
+          value: "#ad68e9",
         },
       ],
     },
   },
   decorators: [
     (Story) => (
-      <div className="bg-no-repeat">
+      <div className="mt-40">
         <Story />
       </div>
     ),
