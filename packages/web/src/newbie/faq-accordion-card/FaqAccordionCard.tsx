@@ -92,7 +92,7 @@ export const FaqAccordionCard = () => {
           </h2>
           <ul className="flex flex-col">
             {Array.from(faqMap.keys()).map((question, index) => (
-              <>
+              <div key={question}>
                 <Disclosure
                   question={question}
                   answer={faqMap.get(question) as string}
@@ -100,7 +100,7 @@ export const FaqAccordionCard = () => {
                 {index !== faqMap.keys.length - 1 && (
                   <hr className="border-gray-200 my-4" />
                 )}
-              </>
+              </div>
             ))}
           </ul>
         </div>

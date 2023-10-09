@@ -1,5 +1,5 @@
 ---
-to: src/<%= h.inflection.dasherize(challenge_name) %>/Overview.mdx
+to: src/<%= h.changeCase.lowerCase(difficulty) %>/<%= h.inflection.dasherize(challenge_name) %>/Overview.mdx
 ---
 import { Canvas, Meta } from "@storybook/blocks";
 

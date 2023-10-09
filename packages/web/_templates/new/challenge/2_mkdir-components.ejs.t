@@ -1,3 +1,3 @@
 ---
-sh: mkdir src/<%= h.inflection.dasherize(challenge_name) %>/components
+sh: mkdir src/<%= h.changeCase.lowerCase(difficulty) %>/<%= h.inflection.dasherize(challenge_name) %>/components
 ---

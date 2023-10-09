@@ -15,6 +15,11 @@ const customViewports = {
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: ["newbie", "junior", "intermediate", "advanced", "guru"],
+      },
+    },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {

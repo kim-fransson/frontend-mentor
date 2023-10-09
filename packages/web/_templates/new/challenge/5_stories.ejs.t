@@ -1,5 +1,5 @@
 ---
-to: src/<%= h.inflection.dasherize(challenge_name) %>/<%= h.changeCase.pascal(challenge_name) %>.stories.tsx
+to: src/<%= h.changeCase.lowerCase(difficulty) %>/<%= h.inflection.dasherize(challenge_name) %>/<%= h.changeCase.pascal(challenge_name) %>.stories.tsx
 ---
 import type { Meta, StoryObj } from "@storybook/react";
 import { <%= h.changeCase.pascal(challenge_name) %> } from "./<%= h.changeCase.pascal(challenge_name) %>";
