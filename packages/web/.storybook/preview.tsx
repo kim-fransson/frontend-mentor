@@ -11,6 +11,13 @@ const customViewports = {
       height: "712px",
     },
   },
+  frontendMentorDesktop: {
+    name: "Frontend Mentor Desktop",
+    styles: {
+      width: "1440px",
+      height: "810px",
+    },
+  },
 };
 
 const preview: Preview = {
