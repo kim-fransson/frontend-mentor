@@ -1,5 +1,5 @@
 ---
-to: src/<%= h.inflection.dasherize(challenge_name) %>/components/<%= h.changeCase.pascal(component_name) %>/<%= h.changeCase.pascal(component_name) %>.tsx
+to: src/<%= h.changeCase.lowerCase(difficulty) %>/<%= h.inflection.dasherize(challenge_name) %>/components/<%= h.changeCase.pascal(component_name) %>/<%= h.changeCase.pascal(component_name) %>.tsx
 ---
 export interface <%= h.changeCase.pascal(component_name) %>Props {}
 

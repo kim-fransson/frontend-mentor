@@ -22,4 +22,11 @@ module.exports = [
       "results-summary",
     ],
   },
+  {
+    type: "select",
+    name: "difficulty",
+    message: "Challenge difficulty",
+    default: 0,
+    choices: ["Newbie", "Junior", "Intermediate", "Advanced", "Guru"],
+  },
 ];
