@@ -24,13 +24,6 @@ export const Small: Story = {
   },
 };
 
-export const Medium: Story = {
-  args: {
-    children: "Shorten It!",
-    size: "medium",
-  },
-};
-
 export const Large: Story = {
   args: {
     children: "Get Started",

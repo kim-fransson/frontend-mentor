@@ -24,7 +24,7 @@ export const ShortenLinkCard = ({ onShortenLink }: ShortenLinkCardProps) => {
   return (
     <div
       className={twMerge(
-        "p-5 bg-[#3a3053] rounded-lg relative overflow-hidden",
+        "p-5 bg-jacarta-300 rounded-lg relative overflow-hidden",
         "animate-fade-right animate-once animate-duration-700 animate-ease-out"
       )}
     >

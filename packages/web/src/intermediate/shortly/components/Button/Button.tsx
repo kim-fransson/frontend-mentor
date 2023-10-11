@@ -9,7 +9,7 @@ import { twMerge } from "tailwind-merge";
 
 export interface ButtonProps extends AriaButtonProps {
   className?: string;
-  size?: "small" | "medium" | "large";
+  size?: "small" | "large";
 }
 
 export const Button = (props: ButtonProps) => {
@@ -22,9 +22,6 @@ export const Button = (props: ButtonProps) => {
   switch (size) {
     case "small":
       sizeClasses = "py-1 px-8 text-lg rounded-md";
-      break;
-    case "medium":
-      sizeClasses = "py-2 px-8 text-lg rounded-md";
       break;
     case "large":
       sizeClasses = "py-3 px-8 rounded-full text-lg";
