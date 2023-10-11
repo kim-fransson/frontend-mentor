@@ -1,17 +1,17 @@
 import { twMerge } from "tailwind-merge";
 import { Button } from "../Button/Button";
 import { useCopyToClipboard } from "@uidotdev/usehooks";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
-export interface ShortenItDisplayCardProps {
+export interface CopyLinkCardProps {
   originalUrl: string;
   shortenUrl: string;
 }
 
-export const ShortenItDisplayCard = ({
+export const CopyLinkCard = ({
   originalUrl,
   shortenUrl,
-}: ShortenItDisplayCardProps) => {
+}: CopyLinkCardProps) => {
   const [copiedText, copyToClipboard] = useCopyToClipboard();
   const [hasCopiedText, setHasCopiedText] = useState(copiedText !== null);
 
@@ -26,7 +26,8 @@ export const ShortenItDisplayCard = ({
   return (
     <div
       className={twMerge(
-        "bg-white rounded-md p-4 flex flex-col shadow-sm gap-4 font-poppins"
+        "bg-white rounded-md p-4 flex flex-col shadow-sm gap-4",
+        "animate-fade-right animate-once animate-duration-700 animate-ease-out"
       )}
     >
       <span className={twMerge("text-lg font-medium text-gray-950")}>

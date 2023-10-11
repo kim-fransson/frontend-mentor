@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ShortenItDisplayCard } from "./ShortenItDisplayCard";
+import { CopyLinkCard } from "./CopyLinkCard";
 
-const meta: Meta<typeof ShortenItDisplayCard> = {
-  component: ShortenItDisplayCard,
+const meta: Meta<typeof CopyLinkCard> = {
+  component: CopyLinkCard,
   parameters: {
     layout: "centered",
     backgrounds: {
@@ -17,7 +17,7 @@ const meta: Meta<typeof ShortenItDisplayCard> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof ShortenItDisplayCard>;
+type Story = StoryObj<typeof CopyLinkCard>;
 
 export const Basic: Story = {
   args: {},
