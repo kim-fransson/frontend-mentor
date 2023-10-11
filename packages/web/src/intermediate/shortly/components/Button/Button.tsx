@@ -24,7 +24,7 @@ export const Button = (props: ButtonProps) => {
       sizeClasses = "py-1 px-8 text-lg rounded-md";
       break;
     case "large":
-      sizeClasses = "py-3 px-8 rounded-full text-lg";
+      sizeClasses = "py-3 px-10 rounded-full text-lg";
       break;
   }
 
