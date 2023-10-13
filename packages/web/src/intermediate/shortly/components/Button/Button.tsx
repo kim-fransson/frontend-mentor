@@ -33,11 +33,11 @@ export const Button = (props: ButtonProps) => {
       {...mergeProps(focusProps, buttonProps)}
       className={twMerge(
         "outline-none select-none cursor-pointer border-2 border-transparent",
-        "bg-teal-400 text-white font-bold",
-        "transition-all duration-200 ease-in-out hover:bg-teal-300",
+        "bg-teal-500 text-white font-bold",
+        "transition-all duration-200 ease-in-out hover:bg-teal-400",
         "disabled:bg-indigo-950",
         isFocusVisible && "border-indigo-950",
-        isPressed && "scale-95 bg-teal-500",
+        isPressed && "scale-95 bg-teal-600",
         sizeClasses,
         className
       )}
