@@ -1,12 +1,11 @@
 import ShortlyLogo from "../../assets/logo.svg?react";
-import HamburgerMenu from "../../assets/icon-hamburger.svg?react";
 import { MenuButton } from "../MenuButton/MenuButton";
 import { Item, Section } from "react-stately";
 
 export const Navbar = () => {
   return (
     <nav className="flex items-center">
-      <ShortlyLogo />
+      <ShortlyLogo className="text-gray-800" />
       <MenuButton className="ml-auto">
         <Section>
           <Item key="features">Features</Item>
