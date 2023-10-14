@@ -6,10 +6,13 @@ import HamburgerMenu from "../../assets/icon-hamburger.svg?react";
 import { Popover } from "../Popover/Popover";
 import { Menu } from "./Menu/Menu";
 import { useIsFirstRender } from "@uidotdev/usehooks";
+import { twMerge } from "tailwind-merge";
 
 interface MenuButtonProps<T extends object>
   extends AriaMenuProps<T>,
-    MenuTriggerProps {}
+    MenuTriggerProps {
+  className?: string;
+}
 
 export const MenuButton = <T extends object>(props: MenuButtonProps<T>) => {
   const state = useMenuTriggerState(props);
@@ -21,7 +24,7 @@ export const MenuButton = <T extends object>(props: MenuButtonProps<T>) => {
   const { buttonProps } = useButton(menuTriggerProps, ref);
 
   return (
-    <>
+    <div className={twMerge("inline-block", props.className)}>
       <button
         {...buttonProps}
         ref={ref}
@@ -39,6 +42,6 @@ export const MenuButton = <T extends object>(props: MenuButtonProps<T>) => {
           <Menu {...menuProps} {...props} onClose={() => state.close()} />
         </Popover>
       )}
-    </>
+    </div>
   );
 };

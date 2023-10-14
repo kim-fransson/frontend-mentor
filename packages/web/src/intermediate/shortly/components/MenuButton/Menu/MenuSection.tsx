@@ -25,11 +25,11 @@ export const MenuSection = <T,>(props: MenuSectionProps<T>) => {
       {section.key !== state.collection.getFirstKey() && (
         <li
           {...separatorProps}
-          className="border-t border-jacarta-400 -mx-2 my-4"
+          className="border-t border-jacarta-400 -mx-2 my-4 sm:my-2"
         />
       )}
       <li {...itemProps}>
-        <ul {...groupProps} className="flex flex-col gap-4">
+        <ul {...groupProps} className="flex flex-col gap-4 sm:gap-2">
           {[...section.childNodes].map((node) => (
             <MenuItem
               key={node.key}

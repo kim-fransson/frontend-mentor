@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { AriaMenuProps, useMenu } from "react-aria";
 import { useTreeState } from "react-stately";
 import { MenuSection } from "./MenuSection";
+import { twMerge } from "tailwind-merge";
 
 interface MenuProps<T extends object> extends AriaMenuProps<T> {
   onClose: () => void;
@@ -9,7 +10,6 @@ interface MenuProps<T extends object> extends AriaMenuProps<T> {
 
 export const Menu = <T extends object>(props: MenuProps<T>) => {
   const state = useTreeState(props);
-
   const ref = useRef(null);
   const { menuProps } = useMenu(props, state, ref);
 
@@ -17,7 +17,9 @@ export const Menu = <T extends object>(props: MenuProps<T>) => {
     <ul
       {...menuProps}
       ref={ref}
-      className="min-w-[350px] py-10 border-t border-gray-400 px-6 bg-jacarta-300 shadow-xs rounded-lg focus:outline-none"
+      className={twMerge(
+        "min-w-[300px] sm:min-w-[350px] p-6 border-t border-gray-400 bg-jacarta-300 shadow-xs rounded-lg focus:outline-none"
+      )}
     >
       {[...state.collection].map((item) => (
         <MenuSection
