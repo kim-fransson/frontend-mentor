@@ -10,8 +10,29 @@ const schema = z.object({
 });
 type FormData = z.infer<typeof schema>;
 
+const shortenUrl = (originalUrl: string) => {
+  const hashCode = originalUrl.split("").reduce((acc, char) => {
+    return acc + char.charCodeAt(0);
+  }, 0);
+
+  const base62 =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let shortenUrl = "";
+  let code = hashCode;
+
+  while (code > 0) {
+    shortenUrl = base62[code % 62] + shortenUrl;
+    code = Math.floor(code / 62);
+  }
+
+  const domain = "https://short.url/";
+  shortenUrl = domain + shortenUrl;
+
+  return shortenUrl;
+};
+
 export interface ShortenLinkCardProps {
-  onShortenLink: (link: string) => void;
+  onShortenLink: (originalLink: string, shortenLink: string) => void;
   className?: string;
 }
 
@@ -33,7 +54,10 @@ export const ShortenLinkCard = ({
       )}
     >
       <form
-        onSubmit={handleSubmit(({ link }) => onShortenLink(link))}
+        onSubmit={handleSubmit(({ link }) => {
+          const shortenLink = shortenUrl(link);
+          onShortenLink(link, shortenLink);
+        })}
         className="flex flex-col gap-8 relative z-10"
       >
         <Controller
