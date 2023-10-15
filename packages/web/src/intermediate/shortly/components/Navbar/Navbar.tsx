@@ -4,7 +4,7 @@ import { Item, Section } from "react-stately";
 
 export const Navbar = () => {
   return (
-    <nav className="flex items-center">
+    <nav className="px-5 py-2 z-50 sticky top-0 backdrop-blur-lg bg-white/80 flex items-center">
       <ShortlyLogo className="text-gray-800" />
       <MenuButton className="ml-auto">
         <Section>

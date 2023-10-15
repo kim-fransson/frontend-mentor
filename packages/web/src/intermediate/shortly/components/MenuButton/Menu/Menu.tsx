@@ -18,7 +18,7 @@ export const Menu = <T extends object>(props: MenuProps<T>) => {
       {...menuProps}
       ref={ref}
       className={twMerge(
-        "min-w-[300px] sm:min-w-[350px] p-6 border-t border-gray-400 bg-jacarta-300 shadow-xs rounded-lg focus:outline-none"
+        "min-w-[300px] sm:min-w-[350px] p-6 bg-jacarta-300 shadow-xs rounded-lg focus:outline-none"
       )}
     >
       {[...state.collection].map((item) => (

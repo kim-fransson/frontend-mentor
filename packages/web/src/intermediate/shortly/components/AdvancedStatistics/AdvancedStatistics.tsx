@@ -7,7 +7,7 @@ export interface AdvancedStatisticsProps {}
 
 export const AdvancedStatistics = () => {
   return (
-    <section className="bg-gray-200 px-4 flex flex-col items-center pt-36">
+    <section className="bg-gray-200 px-4 flex flex-col items-center pt-40 pb-20">
       <h2 className="text-gray-800 font-bold text-3xl mb-4">
         Advanced Statistics
       </h2>

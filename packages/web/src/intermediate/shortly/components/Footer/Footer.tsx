@@ -1,4 +1,3 @@
-import { twMerge } from "tailwind-merge";
 import ShortlyLogo from "../../assets/logo.svg?react";
 import Facebook from "../../assets/icon-facebook.svg?react";
 import Twitter from "../../assets/icon-twitter.svg?react";
@@ -23,7 +22,7 @@ const linkSections = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-200 py-10 flex flex-col items-center">
+    <footer className="bg-gray-900 text-gray-200 py-12 flex flex-col items-center">
       <ShortlyLogo className="mb-12" />
       {linkSections.map((section) => (
         <ul key={section.title} className="flex flex-col items-center mb-8">

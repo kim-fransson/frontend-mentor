@@ -32,7 +32,7 @@ export const MenuButton = <T extends object>(props: MenuButtonProps<T>) => {
       >
         <HamburgerMenu className="w-8 h-8 text-gray-500" />
       </button>
-      {!isFirstRender && (
+      {!isFirstRender && state.isOpen && (
         <Popover
           state={state}
           triggerRef={ref}

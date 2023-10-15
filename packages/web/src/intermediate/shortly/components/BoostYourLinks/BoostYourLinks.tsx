@@ -6,7 +6,7 @@ export interface BoostYourLinksProps {
 
 export const BoostYourLinks = (props: BoostYourLinksProps) => {
   return (
-    <section className="py-24 relative gap-4 bg-jacarta-300 flex flex-col justify-center items-center">
+    <section className="py-24 px-4 relative gap-4 bg-jacarta-300 flex flex-col justify-center items-center">
       <h2 className="relative z-10 text-3xl text-gray-200 font-bold">
         Boost your links today
       </h2>

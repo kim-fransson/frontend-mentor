@@ -28,8 +28,12 @@ export const MenuItem = <T,>(props: MenuItemProps<T>) => {
       {...menuItemProps}
       ref={ref}
       className={twMerge(
-        "rounded-full p-2 text-lg font-bold text-gray-200 flex justify-center items-center cursor-pointer select-none focus:outline-none",
-        isFocused && "bg-teal-500"
+        "text-lg transition-all duration-200 ease-in-out font-bold text-gray-200 flex justify-center items-center cursor-pointer select-none outline-none",
+        item.key === "sign-up" && "bg-teal-500 rounded-full p-2",
+        isFocused &&
+          (item.key !== "sign-up"
+            ? "text-teal-500 scale-105"
+            : "bg-teal-400 scale-105")
       )}
     >
       {item.rendered}

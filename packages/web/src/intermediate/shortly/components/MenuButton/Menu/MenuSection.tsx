@@ -29,7 +29,7 @@ export const MenuSection = <T,>(props: MenuSectionProps<T>) => {
         />
       )}
       <li {...itemProps}>
-        <ul {...groupProps} className="flex flex-col gap-4 sm:gap-2">
+        <ul {...groupProps} className="flex flex-col gap-6 sm:gap-4">
           {[...section.childNodes].map((node) => (
             <MenuItem
               key={node.key}

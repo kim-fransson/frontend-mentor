@@ -40,8 +40,8 @@ export const Popover = ({
             enterFrom="opacity-0 -translate-y-10"
             enterTo="opacity-100 translate-y-0"
             leave="transform duration-300 transition ease-in-out"
-            leaveFrom="opacity-100 rotate-0 scale-100 "
-            leaveTo="opacity-0 scale-95 "
+            leaveFrom="opacity-100 rotate-0 scale-100"
+            leaveTo="opacity-0 scale-95"
           >
             {children}
           </Transition.Child>
