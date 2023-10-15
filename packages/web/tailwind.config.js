@@ -15,6 +15,8 @@ export default {
         inter: ["Inter Variable", "sans-serif"],
         "plus-jakarta-sans": ["Plus Jakarta Sans Variable", "sans-serif"],
         "kumbh-sans": ["Kumbh Sans Variable", "sans-serif"],
+        fraunces: ["Fraunces Variable", "sans-serif"],
+        montserrat: ["Montserrat Variable", "sans-serif"],
       },
       colors: {
         tomato: {
