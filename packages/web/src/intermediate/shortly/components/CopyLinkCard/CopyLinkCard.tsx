@@ -28,30 +28,32 @@ export const CopyLinkCard = ({
   return (
     <div
       className={twMerge(
-        "bg-white rounded-md p-4 flex flex-col shadow-sm gap-4",
+        "bg-white rounded-md p-4 grid grid-cols-[minmax(0,_1fr)_auto] lg:grid-cols-[minmax(0, _1fr_repeat(3, auto))] lg:grid-flow-col lg:items-center shadow-sm gap-4",
         "animate-fade-right animate-once animate-duration-700 animate-ease-out"
       )}
     >
-      <div className="flex gap-2 items-center">
-        <span className={twMerge("text-lg font-medium text-gray-950")}>
-          {originalUrl}
-        </span>
-        <button
-          className="flex ml-auto items-center justify-center"
-          onClick={() => onRemove(originalUrl)}
-        >
-          <Trash className="w-5 h-5 text-red-400" />
-        </button>
-      </div>
+      <span className="text-lg font-medium text-gray-950 col-span-1 truncate">
+        {originalUrl}
+      </span>
 
-      <hr className={twMerge("-mx-4 border-gray-300")} />
+      <button
+        className="flex items-center justify-center col-span-1 lg:col-start-4 justify-self-end"
+        onClick={() => onRemove(originalUrl)}
+      >
+        <Trash className="w-5 h-5 text-red-400" />
+      </button>
 
-      <span className={twMerge("text-lg font-medium text-teal-400")}>
+      <hr className="-mx-4 border-gray-300 col-span-2 lg:hidden" />
+
+      <span
+        className={twMerge("text-lg font-medium text-teal-400 lg:col-start-2")}
+      >
         {shortenUrl}
       </span>
 
       <Button
         size="small"
+        className="col-span-2 lg:col-span-1 lg:col-start-3"
         isDisabled={hasCopiedText}
         onPress={handleCopyToClipboard}
       >

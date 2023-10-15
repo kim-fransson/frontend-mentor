@@ -2,13 +2,15 @@ import { useRef } from "react";
 import { AriaTextFieldProps, useTextField } from "react-aria";
 import { twMerge } from "tailwind-merge";
 
-interface TextFieldProps extends AriaTextFieldProps {}
+interface TextFieldProps extends AriaTextFieldProps {
+  className?: string;
+}
 
 export const TextField = (props: TextFieldProps) => {
   const inputRef = useRef(null);
   const { inputProps, errorMessageProps } = useTextField(props, inputRef);
   return (
-    <div className="relative">
+    <div className={twMerge("relative", props.className)}>
       <input
         {...inputProps}
         className={twMerge(

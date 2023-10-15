@@ -19,7 +19,7 @@ export const Shortly = () => {
       <Navbar />
       <main className="mt-4">
         <Hero />
-        <div className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 w-full px-6">
+        <div className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 w-full px-6 lg:px-24">
           <ShortenLinkCard
             onShortenLink={(originalUrl, shortenUrl) => {
               push({ originalUrl, shortenUrl });

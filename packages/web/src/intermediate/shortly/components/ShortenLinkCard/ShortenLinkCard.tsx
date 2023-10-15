@@ -49,7 +49,7 @@ export const ShortenLinkCard = ({
   return (
     <div
       className={twMerge(
-        "p-5 bg-jacarta-300 rounded-lg relative overflow-hidden",
+        "p-5 lg:p-10 bg-jacarta-300 rounded-lg relative overflow-hidden",
         className
       )}
     >
@@ -58,7 +58,7 @@ export const ShortenLinkCard = ({
           const shortenLink = shortenUrl(link);
           onShortenLink(link, shortenLink);
         })}
-        className="flex flex-col gap-8 relative z-10"
+        className="flex flex-col lg:flex-row gap-8 relative z-10"
       >
         <Controller
           name="link"
@@ -74,6 +74,7 @@ export const ShortenLinkCard = ({
               placeholder="Shorten a link here..."
               onChange={onChange}
               value={value}
+              className="lg:flex-1"
             />
           )}
         />

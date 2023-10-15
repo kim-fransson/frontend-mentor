@@ -22,7 +22,7 @@ const linkSections = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-200 py-12 flex flex-col items-center">
+    <footer className="bg-gray-900 text-gray-200 py-12 flex flex-col lg:flex-row lg:items-start lg:justify-between lg:px-24 items-center">
       <ShortlyLogo className="mb-12" />
       {linkSections.map((section) => (
         <ul key={section.title} className="flex flex-col items-center mb-8">

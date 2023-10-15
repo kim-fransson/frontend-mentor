@@ -19,7 +19,7 @@ export const Links = (props: LinksProps) => {
   }, [props.links]);
   return (
     <section className="bg-gray-200">
-      <ul className="flex flex-col gap-5 pt-24 px-6">
+      <ul className="flex flex-col gap-5 pt-24 px-6 lg:px-24">
         {props.links.map((link, index) => (
           <div ref={index === props.links.length - 1 ? lastItemRef : null}>
             <CopyLinkCard

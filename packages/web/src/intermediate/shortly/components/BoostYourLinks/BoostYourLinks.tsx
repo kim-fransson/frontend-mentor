@@ -7,7 +7,7 @@ export interface BoostYourLinksProps {
 export const BoostYourLinks = (props: BoostYourLinksProps) => {
   return (
     <section className="py-24 px-4 relative gap-4 bg-jacarta-300 flex flex-col justify-center items-center">
-      <h2 className="relative z-10 text-3xl text-gray-200 font-bold">
+      <h2 className="relative z-10 text-3xl text-gray-200 font-bold text-center">
         Boost your links today
       </h2>
       <Button
@@ -23,7 +23,7 @@ export const BoostYourLinks = (props: BoostYourLinksProps) => {
           srcSet="/images/shortly/bg-boost-desktop.svg"
         />
         <img
-          className="w-full"
+          className="w-full h-full"
           src="/images/shortly/bg-boost-mobile.svg"
           alt="background"
         />
