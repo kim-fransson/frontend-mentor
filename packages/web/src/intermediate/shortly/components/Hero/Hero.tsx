@@ -4,7 +4,7 @@ export interface HeroProps {}
 
 export const Hero = () => {
   return (
-    <section className="px-8 overflow-hidden flex flex-col items-center justify-center relative">
+    <section className="px-8 overflow-hidden flex flex-col items-center justify-center relative bg-white">
       <div className="mb-5 -mx-8 w-[30rem] relative">
         <img
           className="left-24 relative"

@@ -12,9 +12,13 @@ type FormData = z.infer<typeof schema>;
 
 export interface ShortenLinkCardProps {
   onShortenLink: (link: string) => void;
+  className?: string;
 }
 
-export const ShortenLinkCard = ({ onShortenLink }: ShortenLinkCardProps) => {
+export const ShortenLinkCard = ({
+  onShortenLink,
+  className,
+}: ShortenLinkCardProps) => {
   const { control, handleSubmit } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -25,7 +29,8 @@ export const ShortenLinkCard = ({ onShortenLink }: ShortenLinkCardProps) => {
     <div
       className={twMerge(
         "p-5 bg-jacarta-300 rounded-lg relative overflow-hidden",
-        "animate-fade-right animate-once animate-duration-700 animate-ease-out"
+        "animate-fade-right animate-once animate-duration-700 animate-ease-out",
+        className
       )}
     >
       <form

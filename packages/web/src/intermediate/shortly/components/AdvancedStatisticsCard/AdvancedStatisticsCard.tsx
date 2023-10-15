@@ -16,7 +16,7 @@ export const AdvancedStatisticsCard = ({
       <div
         className={twMerge(
           "absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-jacarta-300 w-20 h-20 rounded-full",
-          "flex items-center justify-center"
+          "flex items-center justify-center text-teal-400"
         )}
       >
         {icon}

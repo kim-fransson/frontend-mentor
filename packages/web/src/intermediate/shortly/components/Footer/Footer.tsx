@@ -22,7 +22,7 @@ const linkSections = [
 
 export const Footer = () => {
   const linkClasses = twMerge(
-    "rounded-md border border-transparent p-1 capitalize cursor-pointer transition-colors ease-in-out duration-150 hover:text-teal-500",
+    "select-none rounded-md border border-transparent p-1 capitalize cursor-pointer transition-colors ease-in-out duration-150 hover:text-teal-500",
     "focus-visible:outline-none focus-visible:text-teal-500 focus-visible:border focus-visible:border-teal-500",
     "hover:animate-wiggle hover:animate-twice hover:animate-duration-300 hover:animate-ease-out",
     "focus-visible:animate-wiggle focus-visible:animate-twice focus-visible:animate-duration-300 focus-visible:animate-ease-out"
@@ -32,7 +32,9 @@ export const Footer = () => {
       <ShortlyLogo className="mb-12" />
       {linkSections.map((section) => (
         <ul className="flex flex-col items-center mb-8">
-          <span className="font-bold capitalize mb-3">{section.title}</span>
+          <span className="select-none font-bold capitalize mb-3">
+            {section.title}
+          </span>
           {section.links.map((link) => (
             <a tabIndex={0} className={twMerge(linkClasses, "text-stone-400")}>
               {link}
