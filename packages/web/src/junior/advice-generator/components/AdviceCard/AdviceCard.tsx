@@ -3,7 +3,6 @@ import Dice from "../../assets/icon-dice.svg?react";
 import PatternDividerMobile from "../../assets/pattern-divider-mobile.svg?react";
 import PatternDividerDesktop from "../../assets/pattern-divider-desktop.svg?react";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import { twMerge } from "tailwind-merge";
 
 export interface AdviceCardProps {
   advice: Advice;
@@ -19,19 +18,15 @@ export const AdviceCard = ({ advice, onNextAdvice }: AdviceCardProps) => {
       shadow-lg font-manrope font-extrabold max-w-lg"
     >
       <h2
-        className={twMerge(
-          "text-xs flex items-center justify-center text-emerald-400 tracking-[0.2rem]",
-          "animate-fade animate-duration-500 animate-ease-in"
-        )}
+        className="text-xs flex items-center justify-center text-emerald-400 tracking-[0.2rem]
+          animate-fade animate-duration-500 animate-ease-in"
       >
         <span className="mr-4">ADVICE</span>
         <span>#{advice.id}</span>
       </h2>
       <p
-        className={twMerge(
-          "text-2xl text-center text-slate-200 before:content-['“'] after:content-['”']",
-          "animate-fade animate-duration-500 animate-ease-in"
-        )}
+        className="text-2xl text-center text-slate-200 before:content-['“'] after:content-['”']
+          animate-fade animate-duration-500 animate-ease-in"
       >
         {advice.advice}
       </p>
