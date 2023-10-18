@@ -16,6 +16,7 @@
 @import "@fontsource-variable/kumbh-sans";
 @import "@fontsource-variable/fraunces";
 @import "@fontsource-variable/montserrat";
+@import "@fontsource-variable/manrope";
 
 @tailwind base;
 @tailwind components;

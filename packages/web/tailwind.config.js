@@ -17,6 +17,7 @@ export default {
         "kumbh-sans": ["Kumbh Sans Variable", "sans-serif"],
         fraunces: ["Fraunces Variable", "sans-serif"],
         montserrat: ["Montserrat Variable", "sans-serif"],
+        manrope: ["Manrope Variable", "sans-serif"],
       },
       colors: {
         tomato: {
