@@ -18,6 +18,7 @@ export default {
         fraunces: ["Fraunces Variable", "sans-serif"],
         montserrat: ["Montserrat Variable", "sans-serif"],
         manrope: ["Manrope Variable", "sans-serif"],
+        "dm-sans": ["DM Sans Variable", "sans-serif"],
       },
       colors: {
         tomato: {
