@@ -7,7 +7,7 @@ const meta: Meta<typeof ExpenseChart> = {
     layout: "fullscreen",
     backgrounds: {
       default: "frontend-mentor",
-      values: [{ name: "frontend-mentor", value: "#f0f0f0" }],
+      values: [{ name: "frontend-mentor", value: "#f7e9dc" }],
     },
   },
   args: {},
