@@ -1,13 +1,17 @@
 import { PropsWithChildren, useRef } from "react";
 import {
   AriaTooltipProps,
+  TooltipTriggerProps,
   mergeProps,
   useTooltip,
   useTooltipTrigger,
 } from "react-aria";
 import { useTooltipTriggerState } from "react-stately";
 
-export interface TooltipProps extends AriaTooltipProps, PropsWithChildren {
+export interface TooltipProps
+  extends AriaTooltipProps,
+    PropsWithChildren,
+    TooltipTriggerProps {
   tooltip: string;
 }
 
@@ -24,7 +28,7 @@ export const Tooltip = (props: TooltipProps) => {
 
   return (
     <div className="relative inline-flex">
-      <button ref={ref} {...triggerProps} className="outline-none">
+      <button ref={ref} {...triggerProps} className="outline-none w-full">
         {props.children}
       </button>
       {state.isOpen && (

@@ -14,7 +14,9 @@ type Story = StoryObj<typeof Tooltip>;
 
 export const Basic: Story = {
   args: {
-    tooltip: "$52.36",
-    children: <div className="w-10 h-48 rounded-t-lg bg-red-400" />,
+    tooltip: "tooltip",
+    children: (
+      <div className="border-dashed border border-orange-400 p-1">hover me</div>
+    ),
   },
 };
