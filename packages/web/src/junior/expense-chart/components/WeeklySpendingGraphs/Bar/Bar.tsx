@@ -1,13 +1,12 @@
 import { Tooltip } from "../../Tooltip/Tooltip";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import { delay } from "../../../../../utils/delay";
 
 const bar = cva(["transition-all ease-in-out duration-500 w-full rounded-md"], {
   variants: {
     color: {
-      orange: ["bg-orange-400 hover:bg-orange-300"],
-      blue: ["bg-blue-400 hover:bg-blue-300"],
+      orange: ["bg-tomato-700 hover:bg-tomato-800"],
+      blue: ["bg-cyan-500 hover:bg-cyan-400"],
     },
   },
   defaultVariants: {

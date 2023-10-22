@@ -33,7 +33,7 @@ export const Tooltip = (props: TooltipProps) => {
       </button>
       {state.isOpen && (
         <span
-          className="absolute left-1/2 -translate-x-1/2 -translate-y-full -top-1"
+          className="absolute left-1/2 -translate-x-1/2 -translate-y-full -top-1 z-50"
           {...mergeProps(ariaTooltipProps, tooltipProps)}
         >
           <span

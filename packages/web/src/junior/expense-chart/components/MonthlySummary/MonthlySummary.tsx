@@ -22,7 +22,7 @@ export const MonthlySummary = ({
         </span>
       </div>
       <div className="flex flex-col justify-end items-end">
-        <span className="after:content-['﹪'] font-bold text-gray-800 tracking-tight text-sm">
+        <span className="after:content-['﹪'] font-bold text-gray-800 tracking-tight">
           {costDiffFromLastMonth}
         </span>
         <span className="text-sm text-gray-400 tracking-wider">
