@@ -22,7 +22,7 @@ export const ExpenseChart = ({
         <h2 className="text-2xl text-gray-800 font-bold mb-4">
           Spending - Last 7 days
         </h2>
-        <WeeklySpendingGraphs weeklyExpenses={weeklyExpenses} scale={3} />
+        <WeeklySpendingGraphs weeklyExpenses={weeklyExpenses} />
         <hr className="border-tomato-900 my-7" />
         <MonthlySummary
           lastMonthlyCost={lastMonthlyCost}
