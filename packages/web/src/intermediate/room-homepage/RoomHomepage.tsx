@@ -26,22 +26,22 @@ export const RoomHomepage = () => {
         </picture>
       </div>
       <div
-        className="row-start-2 flex flex-col items-center justify-center px-6 py-10 gap-4 bg-white
+        className="row-start-2 flex flex-col justify-center px-6 py-10 gap-4 bg-white
         md:col-span-2 md:row-start-2
-        lg:row-start-1 lg:col-start-3 lg:px-0 lg:py-0 lg:gap-0"
+        lg:row-start-1 lg:col-start-3 lg:px-14 lg:py-0 lg:gap-4"
       >
         <h2
-          className="text-gray-800 tracking-tighter text-4xl font-medium
+          className="text-gray-800 tracking-tighter text-4xl font-bold
           md:mr-auto
-          lg
+          lg:text-4xl
           xl"
         >
           Discover innovative ways to decorate
         </h2>
         <p
-          className="text-gray-400 text-sm
+          className="text-gray-500 text-sm
           md:text-base
-          lg
+          lg:text-xs
           xl"
         >
           We provide unmatched quality, comfort, and style for property owners
@@ -50,16 +50,11 @@ export const RoomHomepage = () => {
           collection and make your property a reflection of you and what you
           love.
         </p>
-        <button
-          className="text-gray-800 flex gap-4 items-center mr-auto
-          md
-          lg
-          xl"
-        >
+        <button className="text-gray-800 flex gap-4 items-center mr-auto">
           <span
-            className="tracking-[0.8em] uppercase font-medium text-sm
+            className="tracking-[0.7em] uppercase font-bold text-sm
             md:text-base
-            lg
+            lg:text-xs
             xl"
           >
             shop now
@@ -74,10 +69,10 @@ export const RoomHomepage = () => {
         lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:ml-0
         xl"
       >
-        <button>
+        <button aria-label="next slide to the left">
           <AngleLeft className="scale-75 select-none" />
         </button>
-        <button>
+        <button aria-label="next slide to the right">
           <AngleRight className="scale-75 select-none" />
         </button>
       </div>
@@ -96,21 +91,21 @@ export const RoomHomepage = () => {
       <div
         className="row-start-4 flex flex-col items-start justify-center px-6 py-10 bg-white gap-4
         md:col-span-2
-        lg:col-span-2 lg:row-start-auto lg:px-0 lg:py-0 lg:gap-0
+        lg:col-span-2 lg:row-start-auto lg:px-10 lg:py-0 lg:gap-2
         xl"
       >
         <h2
-          className="uppercase font-bold tracking-[0.25em] text-gray-800 text-sm
+          className="uppercase font-bold tracking-[0.3em] text-gray-800 text-sm
           md:text-base
-          lg
+          lg:text-sm
           xl"
         >
           about our furniture
         </h2>
         <p
-          className="text-gray-400 text-sm
+          className="text-gray-500 text-sm
           md:text-base
-          lg
+          lg:text-xs
           xl"
         >
           Our multifunctional collection blends design and function to suit your
