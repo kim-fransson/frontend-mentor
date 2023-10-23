@@ -5,13 +5,17 @@ import AngleRight from "./assets/icon-angle-right.svg?react";
 export const RoomHomepage = () => {
   return (
     <div
-      className="grid lg:grid-cols-[382fr_373fr_144fr_398fr] grid-cols-1 max-w-7xl lg:shadow-2xl
-      font-league-spartan"
+      className="grid grid-cols-1 max-w-7xl font-league-spartan
+      md:grid-cols-2
+      lg:grid-cols-[382fr_373fr_144fr_398fr] lg:shadow-2xl"
     >
-      <div className="lg:col-span-2 lg:row-start-auto row-start-1 col-start-1">
+      <div
+        className="row-start-1 col-start-1
+        md:col-span-2 md:row-start-1 md:col-start-1"
+      >
         <picture>
           <source
-            media="(min-width:1024px)"
+            media="(min-width:768px)"
             srcSet="/images/room-homepage/desktop-image-hero-1.jpg"
           />
           <img
@@ -23,13 +27,12 @@ export const RoomHomepage = () => {
       </div>
       <div
         className="row-start-2 flex flex-col items-center justify-center px-6 py-10 gap-4 bg-white
-        md md
-        lg lg lg:col-start-3 lg:col-end-5 lg:row-start-1
-        xl xl"
+        md:col-span-2 md:row-start-2
+        lg:row-start-1 lg:col-start-3 lg:px-0 lg:py-0 lg:gap-0"
       >
         <h2
           className="text-gray-800 tracking-tighter text-4xl font-medium
-          md
+          md:mr-auto
           lg
           xl"
         >
@@ -37,7 +40,7 @@ export const RoomHomepage = () => {
         </h2>
         <p
           className="text-gray-400 text-sm
-          md
+          md:text-base
           lg
           xl"
         >
@@ -55,7 +58,7 @@ export const RoomHomepage = () => {
         >
           <span
             className="tracking-[0.8em] uppercase font-medium text-sm
-            md
+            md:text-base
             lg
             xl"
           >
@@ -67,20 +70,21 @@ export const RoomHomepage = () => {
       <div
         className="flex items-center justify-between bg-stone-900 text-white row-start-1 col-start-1 self-end ml-auto
         py-3 px-4 gap-14
-        md
-        lg lg:col-start-3 lg:col-end-3 lg:row-start-1
+        md:col-start-2 md:row-start-1
+        lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:ml-0
         xl"
       >
         <button>
-          <AngleLeft className="scale-75" />
+          <AngleLeft className="scale-75 select-none" />
         </button>
         <button>
-          <AngleRight className="scale-75" />
+          <AngleRight className="scale-75 select-none" />
         </button>
       </div>
 
       <div
         className="row-start-3
+        md:col-span-1
         lg:row-start-auto"
       >
         <img
@@ -91,13 +95,13 @@ export const RoomHomepage = () => {
       </div>
       <div
         className="row-start-4 flex flex-col items-start justify-center px-6 py-10 bg-white gap-4
-        md
-        lg:col-span-2 lg:row-start-auto
+        md:col-span-2
+        lg:col-span-2 lg:row-start-auto lg:px-0 lg:py-0 lg:gap-0
         xl"
       >
         <h2
           className="uppercase font-bold tracking-[0.25em] text-gray-800 text-sm
-          md
+          md:text-base
           lg
           xl"
         >
@@ -105,7 +109,7 @@ export const RoomHomepage = () => {
         </h2>
         <p
           className="text-gray-400 text-sm
-          md
+          md:text-base
           lg
           xl"
         >
@@ -119,6 +123,7 @@ export const RoomHomepage = () => {
       </div>
       <div
         className="row-start-5
+        md:row-start-3 md:col-span-1
         lg:row-start-auto"
       >
         <img
