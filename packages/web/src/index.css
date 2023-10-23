@@ -18,6 +18,7 @@
 @import "@fontsource-variable/montserrat";
 @import "@fontsource-variable/manrope";
 @import "@fontsource-variable/dm-sans";
+@import "@fontsource-variable/league-spartan";
 
 @tailwind base;
 @tailwind components;

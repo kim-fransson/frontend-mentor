@@ -19,6 +19,7 @@ export default {
         montserrat: ["Montserrat Variable", "sans-serif"],
         manrope: ["Manrope Variable", "sans-serif"],
         "dm-sans": ["DM Sans Variable", "sans-serif"],
+        "league-spartan": ["League Spartan Variable", "sans-serif"],
       },
       colors: {
         tomato: {

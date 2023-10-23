@@ -11,6 +11,7 @@ module.exports = [
     message: "Which challenge are you creating the component for?",
     default: 0,
     choices: [
+      "room-homepage",
       "expense-chart",
       "advice-generator",
       "product-preview-card",
