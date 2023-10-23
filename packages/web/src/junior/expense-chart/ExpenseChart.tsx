@@ -18,7 +18,7 @@ export const ExpenseChart = ({
   return (
     <div className="font-dm-sans flex flex-col gap-4 max-w-sm md:min-w-[384px]">
       <MyBalance balance={currentBalance} />
-      <div className="bg-white rounded-lg px-4 py-6">
+      <div className="bg-white rounded-lg px-4 py-6 shadow-md">
         <h2 className="text-2xl text-gray-800 font-bold mb-4">
           Spending - Last 7 days
         </h2>
