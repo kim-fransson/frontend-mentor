@@ -15,8 +15,6 @@ export const RoomHomepage = () => {
     setSlide(slides[slideIndex]);
   }, [slideIndex]);
 
-  console.log(slide.image);
-
   return (
     <div
       className="grid grid-cols-1 max-w-7xl font-league-spartan

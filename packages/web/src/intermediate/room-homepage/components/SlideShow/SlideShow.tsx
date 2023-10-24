@@ -9,7 +9,7 @@ export interface SlideShowProps {
 
 export const SlideShow = ({ images, activeSlide = 0 }: SlideShowProps) => {
   return (
-    <div className="relative">
+    <div className="relative w-full">
       {images.map((image, index) => {
         return (
           <div
@@ -21,7 +21,7 @@ export const SlideShow = ({ images, activeSlide = 0 }: SlideShowProps) => {
           >
             <picture className="w-full">
               <source media="(min-width:768px)" srcSet={image.desktop} />
-              <img src={image.mobile} alt={image.alt} />
+              <img src={image.mobile} alt={image.alt} className="w-full" />
             </picture>
           </div>
         );
