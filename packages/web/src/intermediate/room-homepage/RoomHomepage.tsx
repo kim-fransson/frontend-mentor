@@ -5,6 +5,7 @@ import { SlideText } from "./components/SlideText/SlideText";
 
 import { slides } from "./slides";
 import { SlideShow } from "./components/SlideShow/SlideShow";
+import { Navigation } from "./components/Navigation/Navigation";
 
 export const RoomHomepage = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -23,9 +24,14 @@ export const RoomHomepage = () => {
       lg:grid-cols-[382fr_373fr_144fr_398fr] lg:shadow-2xl"
     >
       <div
-        className="row-start-1 col-start-1 bg-gray-700
+        className="row-start-1 col-start-1 bg-gray-700 relative
         md:col-span-2 md:row-start-1 md:col-start-1"
       >
+        <Navigation
+          links={["home", "shop", "about", "contact"]}
+          className="absolute z-50 left-1/2 -translate-x-1/2 top-12
+          lg:top-10 lg:left-11 lg:-translate-x-0"
+        />
         <SlideShow
           images={slides.map((slide) => slide.image)}
           activeSlide={slideIndex}

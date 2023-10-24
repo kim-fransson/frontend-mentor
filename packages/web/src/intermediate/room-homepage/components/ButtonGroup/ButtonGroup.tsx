@@ -11,7 +11,7 @@ export const ButtonGroup = ({
   onClickRight,
 }: ButtonGroupProps) => {
   const buttonClasses =
-    "hover:bg-stone-800 bg-stone-900 flex-1 flex items-center justify-center py-3 px-4 transition-colors duration-200 ease-in-out";
+    "hover:bg-stone-700 outline-none focus:bg-stone-700 bg-stone-900 flex-1 flex items-center justify-center py-3 px-4 transition-colors duration-200 ease-in-out";
   return (
     <div className="flex items-center text-white">
       <button

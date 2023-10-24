@@ -9,22 +9,22 @@ export const ShopNowButton = ({
   onShopNow,
   color = "black",
 }: ShopNowButtonProps) => {
-  let hoverTextColor;
+  let textColor;
   switch (color) {
     case "green":
-      hoverTextColor = "hover:text-[#a4c08c]";
+      textColor = "hover:text-[#a4c08c] focus:text-[#a4c08c]";
       break;
     case "yellow":
-      hoverTextColor = "hover:text-[#cd9a3e]";
+      textColor = "hover:text-[#cd9a3e] focus:text-[#cd9a3e]";
       break;
     case "black":
-      hoverTextColor = "hover:text-[#818181]";
+      textColor = "hover:text-[#818181] focus:text-[#818181]";
       break;
   }
   return (
     <button
       onClick={onShopNow}
-      className={`text-gray-800 flex gap-4 items-center group ${hoverTextColor}`}
+      className={`outline-none text-gray-800 flex gap-4 items-center group ${textColor}`}
     >
       <span
         className="tracking-[0.7em] uppercase font-bold text-sm
@@ -34,7 +34,7 @@ export const ShopNowButton = ({
       >
         shop now
       </span>
-      <Arrow className="group-hover:scale-x-150 origin-left transition-all duration-200 ease-in-out" />
+      <Arrow className="group-hover:scale-x-150 group-focus:scale-x-150 origin-left transition-all duration-200 ease-in-out" />
     </button>
   );
 };
