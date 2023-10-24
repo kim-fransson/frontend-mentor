@@ -3,9 +3,14 @@ import { ShopNowButton } from "../ShopNowButton/ShopNowButton";
 export interface SlideTextProps {
   title: string;
   description: string;
+  buttonColor: "green" | "yellow" | "black";
 }
 
-export const SlideText = ({ title, description }: SlideTextProps) => {
+export const SlideText = ({
+  title,
+  description,
+  buttonColor,
+}: SlideTextProps) => {
   return (
     <div
       key={title}
@@ -30,7 +35,7 @@ export const SlideText = ({ title, description }: SlideTextProps) => {
         {description}
       </p>
       <div className="mr-auto">
-        <ShopNowButton onShopNow={() => {}} />
+        <ShopNowButton color={buttonColor} onShopNow={() => {}} />
       </div>
     </div>
   );

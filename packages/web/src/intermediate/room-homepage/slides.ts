@@ -8,6 +8,7 @@ export const slides = [
       desktop: "/images/room-homepage/desktop-image-hero-1.jpg",
       alt: "A bonsai tree on a table and four chairs",
     },
+    color: "green",
   },
   {
     title: "We are available all across the globe",
@@ -18,6 +19,7 @@ export const slides = [
       desktop: "/images/room-homepage/desktop-image-hero-2.jpg",
       alt: "Three colorful chairs",
     },
+    color: "yellow",
   },
   {
     title: "Manufactured with the best materials",
@@ -28,5 +30,6 @@ export const slides = [
       desktop: "/images/room-homepage/desktop-image-hero-3.jpg",
       alt: "A black chair",
     },
+    color: "black",
   },
 ];

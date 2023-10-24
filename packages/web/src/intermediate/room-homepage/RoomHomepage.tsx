@@ -36,10 +36,14 @@ export const RoomHomepage = () => {
         md:col-span-2 md:row-start-2
         lg:row-start-1 lg:col-start-3"
       >
-        <SlideText title={slide.title} description={slide.description} />
+        <SlideText
+          title={slide.title}
+          description={slide.description}
+          buttonColor={slide.color as "black" | "green" | "yellow"}
+        />
       </div>
       <div
-        className="row-start-1 col-start-1 self-end ml-auto
+        className="row-start-1 col-start-1 self-end ml-auto relative
         md:col-start-2 md:row-start-1
         lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:ml-0"
       >
