@@ -1,6 +1,6 @@
-import Arrow from "./assets/icon-arrow.svg?react";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { ButtonGroup } from "./components/ButtonGroup/ButtonGroup";
+import { ShopNowButton } from "./components/ShopNowButton/ShopNowButton";
 
 export const RoomHomepage = () => {
   return (
@@ -50,17 +50,9 @@ export const RoomHomepage = () => {
           collection and make your property a reflection of you and what you
           love.
         </p>
-        <button className="text-gray-800 flex gap-4 items-center mr-auto">
-          <span
-            className="tracking-[0.7em] uppercase font-bold text-sm
-            md:text-base
-            lg:text-xs
-            xl"
-          >
-            shop now
-          </span>
-          <Arrow />
-        </button>
+        <div className="mr-auto">
+          <ShopNowButton onShopNow={() => {}} />
+        </div>
       </div>
       <div
         className="row-start-1 col-start-1 self-end ml-auto
