@@ -1,6 +1,5 @@
 import Arrow from "./assets/icon-arrow.svg?react";
-import AngleLeft from "./assets/icon-angle-left.svg?react";
-import AngleRight from "./assets/icon-angle-right.svg?react";
+import { ButtonGroup } from "./components/ButtonGroup/ButtonGroup";
 
 export const RoomHomepage = () => {
   return (
@@ -63,18 +62,11 @@ export const RoomHomepage = () => {
         </button>
       </div>
       <div
-        className="flex items-center justify-between bg-stone-900 text-white row-start-1 col-start-1 self-end ml-auto
-        py-3 px-4 gap-14
+        className="row-start-1 col-start-1 self-end ml-auto
         md:col-start-2 md:row-start-1
-        lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:ml-0
-        xl"
+        lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:ml-0"
       >
-        <button aria-label="next slide to the left">
-          <AngleLeft className="scale-75 select-none" />
-        </button>
-        <button aria-label="next slide to the right">
-          <AngleRight className="scale-75 select-none" />
-        </button>
+        <ButtonGroup onClickLeft={() => {}} onClickRight={() => {}} />
       </div>
 
       <div
