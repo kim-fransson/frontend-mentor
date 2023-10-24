@@ -2,7 +2,6 @@ import { Product } from "./env";
 import { Suspense, lazy } from "react";
 import Cart from "./assets/icon-cart.svg?react";
 import { ImageSkeleton } from "./components/Image/Image";
-import { delay } from "../../utils/delay";
 
 export interface ProductPreviewCardProps {
   product: Product;

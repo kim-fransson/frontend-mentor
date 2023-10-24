@@ -1,8 +1,18 @@
+import { useEffect, useState } from "react";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { ButtonGroup } from "./components/ButtonGroup/ButtonGroup";
-import { ShopNowButton } from "./components/ShopNowButton/ShopNowButton";
+import { SlideText } from "./components/SlideText/SlideText";
+
+import { slides } from "./slides";
 
 export const RoomHomepage = () => {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [slide, setSlide] = useState(slides[0]);
+
+  useEffect(() => {
+    setSlide(slides[slideIndex]);
+  }, [slideIndex]);
+
   return (
     <div
       className="grid grid-cols-1 max-w-7xl font-league-spartan
@@ -14,52 +24,36 @@ export const RoomHomepage = () => {
         md:col-span-2 md:row-start-1 md:col-start-1"
       >
         <picture>
-          <source
-            media="(min-width:768px)"
-            srcSet="/images/room-homepage/desktop-image-hero-1.jpg"
-          />
+          <source media="(min-width:768px)" srcSet={slide.image.desktop} />
           <img
-            src="/images/room-homepage/mobile-image-hero-1.jpg"
-            alt=""
+            src={slide.image.mobile}
+            alt={slide.image.alt}
             className="h-full w-full object-cover"
           />
         </picture>
       </div>
       <div
-        className="row-start-2 flex flex-col justify-center px-6 py-10 gap-4 bg-white
+        className="row-start-2 
         md:col-span-2 md:row-start-2
-        lg:row-start-1 lg:col-start-3 lg:px-14 lg:py-0 lg:gap-4"
+        lg:row-start-1 lg:col-start-3"
       >
-        <h2
-          className="text-gray-800 tracking-tighter text-4xl font-bold
-          md:mr-auto
-          lg:text-4xl
-          xl"
-        >
-          Discover innovative ways to decorate
-        </h2>
-        <p
-          className="text-gray-500 text-sm
-          md:text-base
-          lg:text-xs
-          xl"
-        >
-          We provide unmatched quality, comfort, and style for property owners
-          across the country. Our experts combine form and function in bringing
-          your vision to life. Create a room in your own style with our
-          collection and make your property a reflection of you and what you
-          love.
-        </p>
-        <div className="mr-auto">
-          <ShopNowButton onShopNow={() => {}} />
-        </div>
+        <SlideText title={slide.title} description={slide.description} />
       </div>
       <div
         className="row-start-1 col-start-1 self-end ml-auto
         md:col-start-2 md:row-start-1
         lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:ml-0"
       >
-        <ButtonGroup onClickLeft={() => {}} onClickRight={() => {}} />
+        <ButtonGroup
+          onClickLeft={() =>
+            setSlideIndex(
+              (current) => (current - 1 + slides.length) % slides.length
+            )
+          }
+          onClickRight={() =>
+            setSlideIndex((current) => (current + 1) % slides.length)
+          }
+        />
       </div>
 
       <div
