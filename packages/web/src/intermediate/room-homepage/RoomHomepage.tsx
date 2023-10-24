@@ -4,6 +4,7 @@ import { ButtonGroup } from "./components/ButtonGroup/ButtonGroup";
 import { SlideText } from "./components/SlideText/SlideText";
 
 import { slides } from "./slides";
+import { SlideShow } from "./components/SlideShow/SlideShow";
 
 export const RoomHomepage = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -13,6 +14,8 @@ export const RoomHomepage = () => {
     setSlide(slides[slideIndex]);
   }, [slideIndex]);
 
+  console.log(slide.image);
+
   return (
     <div
       className="grid grid-cols-1 max-w-7xl font-league-spartan
@@ -20,17 +23,13 @@ export const RoomHomepage = () => {
       lg:grid-cols-[382fr_373fr_144fr_398fr] lg:shadow-2xl"
     >
       <div
-        className="row-start-1 col-start-1
+        className="row-start-1 col-start-1 bg-gray-700
         md:col-span-2 md:row-start-1 md:col-start-1"
       >
-        <picture>
-          <source media="(min-width:768px)" srcSet={slide.image.desktop} />
-          <img
-            src={slide.image.mobile}
-            alt={slide.image.alt}
-            className="h-full w-full object-cover"
-          />
-        </picture>
+        <SlideShow
+          images={slides.map((slide) => slide.image)}
+          activeSlide={slideIndex}
+        />
       </div>
       <div
         className="row-start-2 
