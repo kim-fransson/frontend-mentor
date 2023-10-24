@@ -1,4 +1,5 @@
 import Arrow from "./assets/icon-arrow.svg?react";
+import { AboutUs } from "./components/AboutUs/AboutUs";
 import { ButtonGroup } from "./components/ButtonGroup/ButtonGroup";
 
 export const RoomHomepage = () => {
@@ -81,32 +82,11 @@ export const RoomHomepage = () => {
         />
       </div>
       <div
-        className="row-start-4 flex flex-col items-start justify-center px-6 py-10 bg-white gap-4
+        className="row-start-4
         md:col-span-2
-        lg:col-span-2 lg:row-start-auto lg:px-10 lg:py-0 lg:gap-2
-        xl"
+        lg:col-span-2 lg:row-start-auto"
       >
-        <h2
-          className="uppercase font-bold tracking-[0.3em] text-gray-800 text-sm
-          md:text-base
-          lg:text-sm
-          xl"
-        >
-          about our furniture
-        </h2>
-        <p
-          className="text-gray-500 text-sm
-          md:text-base
-          lg:text-xs
-          xl"
-        >
-          Our multifunctional collection blends design and function to suit your
-          individual taste. Make each room unique, or pick a cohesive theme that
-          best express your interests and what inspires you, Find the furniture
-          pieces you need, from traditional to contemporary styles or anything
-          in between. Product specialists are available to help you create your
-          dream space.
-        </p>
+        <AboutUs />
       </div>
       <div
         className="row-start-5
